@@ -53,14 +53,21 @@
 <header>
     <h1>步道地圖</h1>
     <nav>
-        <ul>
-            <li><a href="index.php">首頁</a></li>
-            <li><a href="leaflet.php">步道地圖</a></li>
-            <li><a href="news.php">最新消息</a></li>
-            <li><a href="weather.php">天氣預報</a></li>
-            <li><a href="login.php">會員登入</a></li>
-        </ul>
-    </nav>
+            <ul>
+                <li><a href="index.php">首頁</a></li>
+                <li><a href="trails.php">步道地圖</a></li>
+                <li><a href="leaflet.php">林道地圖</a></li>
+                <li><a href="news.php">最新消息</a></li>
+                <li><a href="weather.php">天氣預報</a></li>
+                <li><a href="login.php">會員登入</a></li>
+                <li>
+                    <form method="GET" action="results.php">
+                        <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述">
+                        <input type="submit" value="查詢">
+                    </form>
+                </li>
+            </ul>
+        </nav>
 </header>
   <div id="map"></div>
   <script>
@@ -89,10 +96,7 @@
                 var popupContent = `<a href="detailstrail.php?id=${trail.TRAILID}" target="_blank">${trail.TR_CNAME}</a>`;
                 layer.bindPopup(popupContent);
 
-                // Add click event to redirect to the detail page
-                layer.on('click', function() {
-                  window.location.href = `detailstrail.php?id=${trail.TRAILID}`;
-                });
+                // Add click event to redirect to the detail pagelayer.on('click', function() {window.location.href = `detailstrail.php?id=${trail.TRAILID}`;});
               });
             })
             .addTo(map);

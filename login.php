@@ -12,10 +12,18 @@
         <nav>
             <ul>
                 <li><a href="index.php">首頁</a></li>
+                <li><a href="trails.php">步道地圖</a></li>
+                <li><a href="leaflet.php">林道地圖</a></li>
                 <li><a href="news.php">最新消息</a></li>
                 <li><a href="weather.php">天氣預報</a></li>
-                <li><a href="login.php">會員登入</a></li>
                 <li><a href="register.php">會員註冊</a></li>
+
+                <li>
+                    <form method="GET" action="results.php">
+                        <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述">
+                        <input type="submit" value="查詢">
+                    </form>
+                </li>
             </ul>
         </nav>
     </header>
