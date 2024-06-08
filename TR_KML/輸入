@@ -1,0 +1,61 @@
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/012_九寮溪自然步道.kml'
+WHERE `trail`.`TRAILID` = '012' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/013_台灣山毛櫸步道.kml'
+WHERE `trail`.`TRAILID` = '013' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/014_翠峰湖環山步道.kml'
+WHERE `trail`.`TRAILID` = '014' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/016_茂興懷舊步道.kml'
+WHERE `trail`.`TRAILID` = '016' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/018_鐵杉林自然步道.kml'
+WHERE `trail`.`TRAILID` = '018' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/019_見晴懷古步道.kml'
+WHERE `trail`.`TRAILID` = '019' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/020_鳩之澤自然步道.kml'
+WHERE `trail`.`TRAILID` = '020' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/021_望洋山步道.kml'
+WHERE `trail`.`TRAILID` = '021' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/022_朝陽步道.kml'
+WHERE `trail`.`TRAILID` = '022' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/023_東滿步道.kml'
+WHERE `trail`.`TRAILID` = '023' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/024_福巴越嶺步道.kml'
+WHERE `trail`.`TRAILID` = '024' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/025_北插天山登山步道.kml'
+WHERE `trail`.`TRAILID` = '025' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/026_霞喀羅古道.kml'
+WHERE `trail`.`TRAILID` = '026' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/027_大霸尖山登山步道.kml'
+WHERE `trail`.`TRAILID` = '027' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE `trail`
+SET `TR_KML` = 'http://localhost/Database/TR_KML/028_桶後越嶺步道.kml'
+WHERE `trail`.`TRAILID` = '028' AND `trail`.`TR_ID` = 4 AND `trail`.`City_ID` = '19' AND `trail`.`District_ID` = '267';
+
+UPDATE 

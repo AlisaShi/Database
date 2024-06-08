@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
-<Document id="巨木群步道" >
-	<name>巨木群步道</name>
+<Document id="阿里山國家森林遊樂區巨木群步道" >
+	<name>阿里山國家森林遊樂區巨木群步道</name>
 	<Snippet maxLines="0"></Snippet>
 	<Style id="LineStyle00">
 		<LabelStyle>
@@ -17,11 +17,11 @@
 		</PolyStyle>
 	</Style>
 	<Folder id="FeatureLayer0">
-		<name>巨木群步道</name>
+		<name>阿里山國家森林遊樂區巨木群步道</name>
 		<Snippet maxLines="0"></Snippet>
-		<description>巨木群步道</description>
+		<description>阿里山國家森林遊樂區巨木群步道</description>
 		<Placemark id="ID_00000">
-			<name>巨木群步道</name>
+			<name>阿里山巨木群</name>
 			<Snippet maxLines="0"></Snippet>
 			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
 
@@ -39,7 +39,7 @@
 
 <tr style="text-align:center;font-weight:bold;background:#9CBCE2">
 
-<td>巨木群步道</td>
+<td>阿里山國家森林遊樂區巨木群步道</td>
 
 </tr>
 
@@ -77,7 +77,7 @@
 
 <td>TR_CNAME</td>
 
-<td>巨木群步道</td>
+<td>阿里山國家森林遊樂區巨木群步道</td>
 
 </tr>
 
