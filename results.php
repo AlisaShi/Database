@@ -41,7 +41,6 @@ $conn->close();
 
 <body>
     <header>
-    <header>
         <h1>查詢結果</h1>
         <nav>
             <ul>
@@ -61,7 +60,9 @@ $conn->close();
         </nav>
     </header>
     <main>
-        <div id="map"></div>
+
+        <?php if (count($locations) > 0): ?>
+            <div id="map"></div>
         <div id="info">將游標移到地圖上的標記點以查看詳細資訊</div>
 
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -128,12 +129,7 @@ $conn->close();
             });
         </script>
 
-        <?php if (count($locations) > 0): ?>
-            <ul>
-                <?php foreach ($locations as $location): ?>
-                    <li><a href="details.php?id=<?= $location['id'] ?>"><?= $location['location_name'] ?></a></li>
-                <?php endforeach; ?>
-            </ul>
+            
         <?php else: ?>
             <p>沒有找到相關景點。</p>
         <?php endif; ?>
