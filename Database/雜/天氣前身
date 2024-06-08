@@ -1,0 +1,60 @@
+<?php
+include 'db.php';
+
+$sql = "SELECT * FROM weather_forecast";
+$result = $conn->query($sql);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天氣預報</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>天氣預報</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">首頁</a></li>
+                <li><a href="news.php">最新消息</a></li>
+                <li><a href="weather.php">天氣預報</a></li>
+                <li><a href="login.php">會員登入</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>預報列表</h2>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>日期</th>
+                <th>區域ID</th>
+                <th>天氣類型ID</th>
+                <th>最低溫度</th>
+                <th>最高溫度</th>
+                <th>備註</th>
+            </tr>
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                            <td>{$row['Forecast_ID']}</td>
+                            <td>{$row['Weather_Date']}</td>
+                            <td>{$row['District_ID']}</td>
+                            <td>{$row['Weather_Type_ID']}</td>
+                            <td>{$row['Temperature_Lower_Limit']}</td>
+                            <td>{$row['Temperature_Upper_Limit']}</td>
+                            <td>{$row['Remarks']}</td>
+                          </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='7'>沒有資料</td></tr>";
+            }
+            $conn->close();
+            ?>
+        </table>
+    </main>
+</body>
+</html>

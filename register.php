@@ -1,3 +1,10 @@
+<?php
+include 'db.php';
+
+// 獲取性別選項
+$sex_query = "SELECT Sex_ID, Sex FROM sex";
+$sex_result = $conn->query($sex_query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,16 +34,28 @@
             <label for="last_name">姓氏：</label>
             <input type="text" id="last_name" name="last_name" required><br>
             <label for="gender">性別：</label>
-            <input type="text" id="gender" name="gender" required><br>
+            <select id="gender" name="gender" required>
+                <?php
+                if ($sex_result->num_rows > 0) {
+                    while($row = $sex_result->fetch_assoc()) {
+                        echo "<option value='{$row['Sex_ID']}'>{$row['Sex']}</option>";
+                    }
+                } else {
+                    echo "<option value=''>沒有資料</option>";
+                }
+                ?>
+            </select><br>
             <label for="email">電子郵件：</label>
             <input type="email" id="email" name="email" required><br>
             <label for="birthday">生日：</label>
             <input type="date" id="birthday" name="birthday" required><br>
             <label for="password">密碼：</label>
             <input type="password" id="password" name="password" required><br>
-            
             <input type="submit" value="註冊">
         </form>
     </main>
 </body>
 </html>
+<?php
+$conn->close();
+?>

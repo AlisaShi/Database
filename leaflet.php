@@ -81,7 +81,7 @@
     }).addTo(map);
 
     // 加载KML文件并添加到地图
-    omnivore.kml('http://localhost/Database/林道分布圖1131.kml')
+    omnivore.kml('./林道分布圖1131.kml')
       .on('ready', function() {
         var layer = this;
 

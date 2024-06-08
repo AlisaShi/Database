@@ -1,5 +1,13 @@
 <?php
 include 'db.php';
+session_start();
+
+//check to see if the user is logged in.
+if(isset($_SESSION['email'])) {
+    // User is logged in
+    $email = $_SESSION['email'];
+    $user_id = $_SESSION['user_id'];
+}
 
 // 獲取URL中的景點ID
 $id = $_GET['id'];
@@ -112,8 +120,8 @@ if ($result_tr->num_rows > 0) {
 
 
         <h2>該地區一周天氣預報:  <?php echo $district['District']; ?></h2>
-        <div> 早上: 06:00:00 ~ 18:00:00</div>
-        <div> 晚上: 18:00:00 ~ 06:00:00(跨天)</div>
+        <div> 早上: 06:00:00 ~ 18:00:00(半夜更新) | 12:00:00 ~ 18:00:00(中午更新)</div>
+        <div> 晚上: 00:00:00 ~ 06:00:00(半夜更新) | 18:00:00 ~ (隔日)06:00:00(中午更新)</div>
         <table>
             <thead>
                 <tr>
@@ -131,12 +139,13 @@ if ($result_tr->num_rows > 0) {
                         <tr>
                             <td><?php echo date("Y-m-d", strtotime($data['Start_Time'])); ?></td>
                             <td colspan="1">
-                                <?php 
-                                    $end_time = date("H:i:s", strtotime($data['End_Time']));
-                                    if ($end_time == "06:00:00") {
-                                        echo '晚上';
-                                    } elseif ($end_time == "18:00:00") {
-                                        echo '早上';
+                            <?php
+                                    $start_time = date("Y-m-d", strtotime($data['Start_Time']));
+                                    $start_time_hour = date("H:i:s", strtotime($data['Start_Time']));
+                                    if ($start_time_hour == "00:00:00") {
+                                        echo $start_time - 1;
+                                    } else {
+                                        echo $start_time;
                                     }
                                 ?>
                             </td>

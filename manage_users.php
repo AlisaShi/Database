@@ -1,6 +1,15 @@
 <?php
 include 'db.php';
 
+session_start();
+
+//check to see if the user is logged in.
+if(isset($_SESSION['email'])) {
+    // User is logged in
+    $email = $_SESSION['email'];
+    $user_id = $_SESSION['user_id'];
+}
+
 // 取得所有使用者資料
 $sql = "SELECT * FROM user";
 $result = $conn->query($sql);

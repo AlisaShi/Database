@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>管理者介面</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        th, td {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>管理者介面</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>操作</th>
+                <th>ID</th>
+                <th>Page URL</th>
+                <th>Opening Time</th>
+                <th>Closing Time</th>
+                <th>Address</th>
+                <th>Altitude Min</th>
+                <th>Altitude Max</th>
+                <th>Description</th>
+                <th>Managing Department</th>
+                <th>Coordinates</th>
+                <th>Small Vehicle Allowed</th>
+                <th>Large Vehicle Allowed</th>
+                <th>District ID</th>
+                <th>Type ID</th>
+                <th>Activity Intensity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php if ($result->num_rows > 0) : ?>
+                <?php while($row = $result->fetch_assoc()) : ?>
+                    <tr>
+                        <form action="admin.php" method="post">
+                            <td>
+                                <input type="hidden" name="id" value="<?= $row['id'] ?>">
+                                <button type="submit" name="update">更新</button>
+                                <button type="submit" name="delete">刪除</button>
+                            </td>
+                            <td><?= $row['id'] ?></td>
+                            <td><input type="text" name="page_url" value="<?= $row['page_url'] ?>"></td>
+                            <td><input type="time" name="opening_time" value="<?= $row['opening_time'] ?>"></td>
+                            <td><input type="time" name="closing_time" value="<?= $row['closing_time'] ?>"></td>
+                            <td><input type="text" name="address" value="<?= $row['address'] ?>"></td>
+                            <td><input type="number" name="altitude_min" value="<?= $row['altitude_min'] ?>"></td>
+                            <td><input type="number" name="altitude_max" value="<?= $row['altitude_max'] ?>"></td>
+                            <td><input type="text" name="description" value="<?= $row['description'] ?>"></td>
+                            <td><input type="text" name="managing_department" value="<?= $row['managing_department'] ?>"></td>
+                            <td><input type="text" name="coordinates" value="<?= $row['coordinates'] ?>"></td>
+                            <td><input type="checkbox" name="small_vehicle_allowed" value="1" <?= $row['small_vehicle_allowed'] ? 'checked' : '' ?>></td>
+                            <td><input type="checkbox" name="large_vehicle_allowed" value="1" <?= $row['large_vehicle_allowed'] ? 'checked' : '' ?>></td>
+                            <td><input type="text" name="District_ID" value="<?= $row['District_ID'] ?>"></td>
+                            <td><input type="number" name="Type_ID" value="<?= $row['Type_ID'] ?>"></td>
+                            <td><input type="number" name="activity_intensity" value="<?= $row['activity_intensity'] ?>"></td>
+                        </form>
+                    </tr>
+                <?php endwhile; ?>
+            <?php else : ?>
+                <tr>
+                    <td colspan="16">無資料</td>
+                </tr>
+            <?php endif; ?>
+            <tr>
+                <form action="admin.php" method="post">
+                    <td><button type="submit" name="add">新增</button></td>
+                    <td></td>
+                    <td><input type="text" name="page_url"></td>
+                    <td><input type="time" name="opening_time"></td>
+                    <td><input type="time" name="closing_time"></td>
+                    <td><input type="text" name="address"></td>
+                    <td><input type="number" name="altitude_min"></td>
+                    <td><input type="number" name="altitude_max"></td>
+                    <td><input type="text" name="description"></td>
+                    <td><input type="text" name="managing_department"></td>
+                    <td><input type="text" name="coordinates"></td>
+                    <td><input type="checkbox" name="small_vehicle_allowed" value="1"></td>
+                    <td><input type="checkbox" name="large_vehicle_allowed" value="1"></td>
+                    <td><input type="text" name="District_ID"></td>
+                    <td><input type="number" name="Type_ID"></td>
+                    <td><input type="number" name="activity_intensity"></td>
+                </form>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+<?php
+$conn->close();
+?>

@@ -1,5 +1,13 @@
 <?php
 include 'db.php';
+session_start();
+
+//check to see if the user is logged in.
+if(isset($_SESSION['email'])) {
+    // User is logged in
+    $email = $_SESSION['email'];
+    $user_id = $_SESSION['user_id'];
+}
 
 // 獲取 URL 中的 trail ID
 $id = $_GET['id'];
@@ -13,6 +21,17 @@ if ($result->num_rows > 0) {
     $trail = $result->fetch_assoc();
 } else {
     echo "找不到該步道的資料。";
+    exit();
+}
+
+$city_id = $trail['City_ID'];
+$sql_city = "SELECT * FROM city WHERE City_ID = '$city_id'";
+$result_city = $conn->query($sql_city);
+
+if ($result_city->num_rows > 0) {
+    $city = $result_city->fetch_assoc();
+} else {
+    echo "找不到該縣市";
     exit();
 }
 
@@ -53,6 +72,17 @@ if ($result_tr->num_rows > 0) {
     $managing_department = $tr_info['TR_Name'] . ', 連絡電話: ' . $tr_info['TR_Phone'];
 } else {
     $managing_department = "未知";
+}
+
+$TRAILID = $trail['TRAILID'];
+$sql_condition = "SELECT * FROM tr_info WHERE TRAILID = '$TRAILID'";
+$result_condition = $conn->query($sql_condition);
+
+$trail_condition = [];
+if ($result_condition->num_rows > 0) {
+    while ($row = $result_condition->fetch_assoc()) {
+        $trail_condition[] = $row;
+    }
 }
 
 ?>
@@ -98,22 +128,51 @@ if ($result_tr->num_rows > 0) {
     </header>
     
     <main>
-        <p><strong>Trail ID:</strong> <?php echo $trail['TRAILID']; ?></p>
-        <p><strong>City ID:</strong> <?php echo $trail['City_ID']; ?></p>
-        <p><strong>District ID:</strong> <?php echo $trail['District_ID']; ?></p>
-        <p><strong>Length:</strong> <?php echo $trail['TR_LENGTH']; ?></p>
-        <p><strong>Altitude:</strong> <?php echo $trail['TR_ALT']; ?></p>
-        <p><strong>Lowest Altitude:</strong> <?php echo $trail['TR_ALT_LOW']; ?></p>
-        <p><strong>Permit Stop:</strong> <?php echo $trail['TR_permit_stop'] ? 'Yes' : 'No'; ?></p>
-        <p><strong>Paving:</strong> <?php echo $trail['TR_PAVE']; ?></p>
-        <p><strong>Difficulty Class:</strong> <?php echo $trail['TR_DIF_CLASS']; ?></p>
-        <p><strong>Tour:</strong> <?php echo $trail['TR_TOUR']; ?></p>
-        <p><strong>Best Season:</strong> <?php echo $trail['TR_BEST_SEASON']; ?></p>
-        
-        
+    <p><strong>縣市、鄉鎮市區:</strong> <?php echo $city['City']; ?><?php echo $district['District']; ?></p>
+        <p><strong>步道長度:</strong> <?php echo $trail['TR_LENGTH']; ?></p>
+        <p><strong>海拔高度:</strong> <?php echo $trail['TR_ALT']; ?> ~ <?php echo $trail['TR_ALT_LOW']; ?>(公尺)</p>
+        <p><strong>是否需要入山申請:</strong> <?php echo $trail['TR_permit_stop'] ? '是' : '否'; ?></p>
+        <p><strong>負責機構:</strong> 林業及自然保育署 <?php echo $managing_department; ?></p>
+        <p><strong>步道路況簡述:</strong> <?php echo $trail['TR_PAVE']; ?></p>
+        <p><strong>難度分級:</strong> <?php echo $trail['TR_DIF_CLASS']; ?></p>
+        <p><strong>步道耗費時長:</strong> <?php echo $trail['TR_TOUR']; ?></p>
+        <p><strong>推薦前往季節:</strong> <?php echo $trail['TR_BEST_SEASON']; ?></p>
+
+        <h2>步道路況</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>公告日期</th>
+                    <th>路況類型</th>
+                    <th>標題</th>
+                    <th>內容</th>
+                    <th>開始日期</th>
+                    <th>結束日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (!empty($trail_condition)): ?>
+                    <?php foreach ($trail_condition as $condition): ?>
+                        <tr>
+                            <td><?php echo $condition['ANN_DATE']; ?></td>
+                            <td><?php echo $condition['TR_TYP']; ?></td>
+                            <td><?php echo $condition['TITLE']; ?></td>
+                            <td><?php echo $condition['CONTENT']; ?></td>
+                            <td><?php echo $condition['opendate']; ?></td>
+                            <td><?php echo $condition['closedate']; ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="6">該步道一切正常</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+
         <h2>該地區一周天氣預報:  <?php echo $district['District']; ?></h2>
-        <div> 早上: 06:00:00 ~ 18:00:00</div>
-        <div> 晚上: 18:00:00 ~ 06:00:00(跨天)</div>
+        <div> 早上: 06:00:00 ~ 18:00:00(半夜更新) | 12:00:00 ~ 18:00:00(中午更新)</div>
+        <div> 晚上: 00:00:00 ~ 06:00:00(半夜更新) | 18:00:00 ~ (隔日)06:00:00(中午更新)</div>
         <table>
             <thead>
                 <tr>
@@ -145,11 +204,10 @@ if ($result_tr->num_rows > 0) {
                             <td><?php echo $data['MaxTemperature']; ?>°C</td>
                             <td><?php echo $data['MinTemperature']; ?>°C</td>
                         </tr>
-                        
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="5">沒有對應天氣資料</td>
+                        <td colspan="6">沒有對應天氣資料</td>
                     </tr>
                 <?php endif; ?>
             </tbody>

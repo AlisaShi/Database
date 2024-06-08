@@ -1,6 +1,15 @@
 <?php
 include 'db.php';
 
+session_start();
+
+//check to see if the user is logged in.
+if(isset($_SESSION['email'])) {
+    // User is logged in
+    $email = $_SESSION['email'];
+    $user_id = $_SESSION['user_id'];
+}
+
 // 獲取用戶輸入的關鍵字
 $search_term = $_GET['search'];
 
@@ -41,6 +50,7 @@ $conn->close();
 
 <body>
     <header>
+    <header>
         <h1>查詢結果</h1>
         <nav>
             <ul>
@@ -60,10 +70,8 @@ $conn->close();
         </nav>
     </header>
     <main>
-
-        <?php if (count($locations) > 0): ?>
-            <div id="map"></div>
         <div id="info">將游標移到地圖上的標記點以查看詳細資訊</div>
+        <div id="map"></div>
 
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <script>
@@ -129,7 +137,12 @@ $conn->close();
             });
         </script>
 
-            
+        <?php if (count($locations) > 0): ?>
+            <ul>
+                <?php foreach ($locations as $location): ?>
+                    <li><a href="details.php?id=<?= $location['id'] ?>"><?= $location['location_name'] ?></a></li>
+                <?php endforeach; ?>
+            </ul>
         <?php else: ?>
             <p>沒有找到相關景點。</p>
         <?php endif; ?>
