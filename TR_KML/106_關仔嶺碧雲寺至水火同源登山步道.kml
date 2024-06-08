@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="關仔嶺碧雲寺至水火同源登山步道" >
+	<name>關仔嶺碧雲寺至水火同源登山步道</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="LineStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff7b0080</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>00000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Folder id="FeatureLayer0">
+		<name>關仔嶺碧雲寺至水火同源登山步道</name>
+		<Snippet maxLines="0"></Snippet>
+		<description>關仔嶺碧雲寺至水火同源登山步道</description>
+		<Placemark id="ID_00000">
+			<name>關仔嶺碧雲寺至水火同源登山步道</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>關仔嶺碧雲寺至水火同源登山步道</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>59</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID</td>
+
+<td>106</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TR_CNAME</td>
+
+<td>關仔嶺碧雲寺至水火同源登山步道</td>
+
+</tr>
+
+<tr>
+
+<td>RA_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>RANAME</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID_O</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_ID</td>
+
+<td>0500</td>
+
+</tr>
+
+<tr>
+
+<td>USER_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>CRT_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr>
+
+<td>MOD_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>STATUS</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MEMO</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_NAME</td>
+
+<td>嘉義林區管理處</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#LineStyle00</styleUrl>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						120.4812871274497,23.32511577924441,0 120.481287099627,23.32512294691119,0 120.4813186463522,23.32499403278275,0 120.481753062127,23.32505281172428,0 120.4818017138233,23.32451539727452,0 120.4819488172348,23.32460906346838,0 120.4821989040328,23.32416549502535,0 120.4826500601476,23.32390894969939,0 120.4830130126046,23.32438321378323,0 120.4830840831399,23.32406806952118,0 120.4832549436498,23.32403996258038,0 120.4833276778447,23.32329476677093,0 120.4835583818302,23.32384743669822,0 120.4843275540596,23.32364210750653,0 120.4849034926749,23.32322827704147,0 120.4854080599761,23.32320843263768,0 120.4856653681534,23.32290106685974,0 120.4855345028158,23.32262109886928,0 120.485612226643,23.32259268351621,0 120.4853494202967,23.32231228110588,0 120.485528148033,23.32225552641878,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

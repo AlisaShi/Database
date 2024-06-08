@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="加里山登山步道" >
+	<name>加里山登山步道</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="LineStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff5b0094</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>00000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Placemark id="ID_00000">
+		<name>加里山登山步道</name>
+		<Snippet maxLines="0"></Snippet>
+		<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>加里山登山步道</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>37</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID</td>
+
+<td>43</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TR_CNAME</td>
+
+<td>加里山登山步道</td>
+
+</tr>
+
+<tr>
+
+<td>RA_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>RANAME</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID_O</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_ID</td>
+
+<td>0200</td>
+
+</tr>
+
+<tr>
+
+<td>USER_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>CRT_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr>
+
+<td>MOD_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>STATUS</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MEMO</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_NAME</td>
+
+<td>新竹林區管理處</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+		<styleUrl>#LineStyle00</styleUrl>
+		<MultiGeometry>
+			<LineString>
+				<coordinates>
+					121.0125706616576,24.51076543551172,0 121.0124199364198,24.51088663144099,0 121.0127660170808,24.51146223249375,0 121.0128918939401,24.51195150719731,0 121.0130492346983,24.51249834202957,0 121.0130178696317,24.51339057091323,0 121.0128922173731,24.51402158413658,0 121.0128292403213,24.51451306500685,0 121.0129092223024,24.51498064605562,0 121.0129769284114,24.51573860960247,0 121.0130810790801,24.51623993220436,0 121.0131460877839,24.51658164241868,0 121.013416600935,24.51655068109271,0 121.0143887444722,24.5163340288972,0 121.0154876973182,24.51618696689699,0 121.0160033480635,24.51603222549219,0 121.01635263984,24.51575032805798,0 121.0166880571125,24.51578465115688,0 121.0167616409067,24.51612444239875,0 121.0173908463498,24.51646974892147,0 121.0184211052221,24.51621757487501,0 121.0194524568542,24.51628705488507,0 121.0195456357349,24.51750907479337,0 121.0206940993198,24.51747668369301,0 121.0210082017948,24.5179652066122,0 121.0212027869018,24.51885463284694,0 121.0212199478558,24.52036283386832,0 121.0221669642204,24.52139136963287,0 121.0231310428943,24.52317786526865,0 121.0239425685561,24.52282969189368,0 121.0244160929034,24.5233323502523,0 121.0244389207282,24.524153422037,0 121.0245262814741,24.52480186304169,0 121.0245020415517,24.52518954376795,0 121.0244392493656,24.52585152707965,0 121.0244420030721,24.52616312591687,0 121.0243450681819,24.52688767404173,0 121.0242054878531,24.52723050699903,0 121.0245967752031,24.52700275895466,0 121.0246789073168,24.52710668040098,0 
+				</coordinates>
+			</LineString>
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>

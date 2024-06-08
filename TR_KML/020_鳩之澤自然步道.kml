@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="鳩之澤自然步道" >
+	<name>鳩之澤自然步道</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="LineStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff004da6</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>00000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Placemark id="ID_00000">
+		<name>鳩之澤自然步道</name>
+		<Snippet maxLines="0"></Snippet>
+		<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>鳩之澤自然步道</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>18</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID</td>
+
+<td>20</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TR_CNAME</td>
+
+<td>鳩之澤自然步道</td>
+
+</tr>
+
+<tr>
+
+<td>RA_ID</td>
+
+<td>0100001</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>RANAME</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID_O</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_ID</td>
+
+<td>0100</td>
+
+</tr>
+
+<tr>
+
+<td>USER_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>CRT_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr>
+
+<td>MOD_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>STATUS</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MEMO</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_NAME</td>
+
+<td>羅東林區管理處</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+		<styleUrl>#LineStyle00</styleUrl>
+		<MultiGeometry>
+			<LineString>
+				<coordinates>
+					121.5061898533787,24.54787074726199,0 121.5062378858483,24.54740665916631,0 121.506235192434,24.54739754800084,0 121.5056364645705,24.54758022254406,0 121.5053813468573,24.54796028314742,0 121.5050265445171,24.54809690247111,0 121.5046313917189,24.54801696731093,0 121.5044057378247,24.54836081288546,0 121.5045248725248,24.54853195949383,0 121.5044863284634,24.54876683456882,0 121.5048131109423,24.5490275729216,0 121.5051590578008,24.54914378721172,0 121.5056326378037,24.54908802750343,0 121.5061146390616,24.5486710902704,0 121.505719483823,24.54859115800841,0 121.5058461016091,24.54816638457011,0 121.5065938814205,24.54756797996556,0 121.5066216440908,24.54710742320276,0 121.5059888021788,24.54682965871503,0 121.5062354220512,24.54679271609193,0 121.5070441933627,24.54663651060447,0 
+				</coordinates>
+			</LineString>
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>

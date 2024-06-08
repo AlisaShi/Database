@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>馬崙山步道支線.kmz</name>
+	<Style id="LineStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff00ff55</color>
+			<width>1.5</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>00000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Placemark id="ID_00146">
+		<name>馬崙山步道支線</name>
+		<Snippet maxLines="0"></Snippet>
+		<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>馬崙山步道支線</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>146</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Name</td>
+
+<td>馬崙山步道支線</td>
+
+</tr>
+
+<tr>
+
+<td>System</td>
+
+<td>中彰山域區域步道系統</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SubSys</td>
+
+<td>谷關子區域步道系統</td>
+
+</tr>
+
+<tr>
+
+<td>Sect</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>FD</td>
+
+<td>東勢</td>
+
+</tr>
+
+<tr>
+
+<td>Dist</td>
+
+<td>臺中市和平區</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Start</td>
+
+<td>三岔路口</td>
+
+</tr>
+
+<tr>
+
+<td>End</td>
+
+<td>八壯士</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Length</td>
+
+<td>1.45</td>
+
+</tr>
+
+<tr>
+
+<td>WKNG</td>
+
+<td>八仙山</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>CMPT</td>
+
+<td>101</td>
+
+</tr>
+
+<tr>
+
+<td>PF</td>
+
+<td>1441</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Date</td>
+
+<td>96年12月</td>
+
+</tr>
+
+<tr>
+
+<td>Manage</td>
+
+<td>2</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>Level</td>
+
+<td>2</td>
+
+</tr>
+
+<tr>
+
+<td>Wstation</td>
+
+<td>上谷關</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TYPE</td>
+
+<td>區域步道系統</td>
+
+</tr>
+
+<tr>
+
+<td>TYPEcode</td>
+
+<td>2</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>SYScode</td>
+
+<td>4</td>
+
+</tr>
+
+<tr>
+
+<td>SubScode</td>
+
+<td>2</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+		<styleUrl>#LineStyle00</styleUrl>
+		<gx:balloonVisibility>1</gx:balloonVisibility>
+		<MultiGeometry>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					121.0233693270001,24.19201812600005,0 121.023143244,24.19182196600007,0 121.0230236160001,24.19188177600005,0 121.0228294870001,24.19187621900006,0 121.022878695,24.19166109300005,0 121.0227010900001,24.19173976700006,0 121.0225877350001,24.19167563000008,0 121.022402272,24.19179784300007,0 121.022275548,24.19171082100008,0 121.0222126750001,24.19187296100006,0 121.022208866,24.19188018800003,0 121.0219020870001,24.19187589500007,0 121.021888955,24.19187108600005,0 121.0219754530001,24.19176790100005,0 121.0217260380001,24.19160096100006,0 121.0214758110001,24.19134886600006,0 121.0213028490001,24.19127946800007,0 121.021157248,24.19117697700006,0 121.021116264,24.19104093800007,0 121.02100254,24.19095999000007,0 121.0207491000001,24.19081501400007,0 121.0206182540001,24.19065786300007,0 121.02041908,24.19084648900003,0 121.0202958260001,24.19061822600003,0 121.0204300390001,24.19038664600004,0 121.0204399900001,24.19037756200004,0 121.0200385320001,24.19056801000005,0 121.020023314,24.19058638000007,0 121.0199792770001,24.19039121300005,0 121.020284122,24.19000532000007,0 121.0198512780001,24.19006812000003,0 121.019656692,24.19030709300006,0 121.019363395,24.19042800600005,0 121.0194702600001,24.19087454000004,0 121.019623765,24.19132130300005,0 121.0194887450001,24.19148330700006,0 121.0195132590001,24.19170551500002,0 121.0193855070001,24.19228828800004,0 121.019466801,24.19264259800008,0 121.0194774170001,24.19285408600007,0 121.0192212110001,24.19305272800005,0 121.0189452730001,24.19383983900008,0 121.0188738370001,24.19417189700005,0 121.018712336,24.19494906600005,0 121.0184279560001,24.19513448900006,0 121.01860047,24.19517205200003,0 121.0185093890001,24.19563262700007,0 121.018269443,24.19607848000004,0 121.018244437,24.19671178200002,0 121.018084237,24.19699095900006,0 121.0181843520001,24.19713997300005,0 121.0181844870001,24.19715106200005,0 
+				</coordinates>
+			</LineString>
+		</MultiGeometry>
+	</Placemark>
+</Document>
+</kml>

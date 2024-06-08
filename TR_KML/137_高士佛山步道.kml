@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="高士佛山步道" >
+	<name>高士佛山步道</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="LineStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff009133</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>00000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Folder id="FeatureLayer0">
+		<name>高士佛山步道</name>
+		<Snippet maxLines="0"></Snippet>
+		<description>高士佛山步道</description>
+		<Placemark id="ID_00000">
+			<name>高士佛山步道</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>高士佛山步道</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>95</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID</td>
+
+<td>137</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TR_CNAME</td>
+
+<td>高士佛山步道</td>
+
+</tr>
+
+<tr>
+
+<td>RA_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>RANAME</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID_O</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_ID</td>
+
+<td>0600</td>
+
+</tr>
+
+<tr>
+
+<td>USER_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>CRT_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr>
+
+<td>MOD_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>STATUS</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MEMO</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_NAME</td>
+
+<td>屏東林區管理處</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#LineStyle00</styleUrl>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						120.8139828942207,22.13280465162826,0 120.8134988569885,22.13229832542168,0 120.8126851201027,22.13187290486033,0 120.8120555974338,22.1314296290938,0 120.8117067947409,22.1312937519707,0 120.8108151920718,22.13111208754971,0 120.8098558190588,22.13086711760471,0 120.8089159102961,22.13056797475748,0 120.8077913317361,22.13062987624496,0 120.8070928908908,22.13098128774027,0 120.8062006045639,22.13130537116505,0 120.8054156300645,22.13113283552317,0 120.8046402144627,22.13105965597694,0 120.8040874478921,22.13121253197611,0 120.8035745201602,22.130597761713,0 120.8030418074428,22.13027197955374,0 120.8025191182892,22.12971138422741,0 120.8017924844344,22.12942148999467,0 120.80112419383,22.1290052201632,0 120.8003876691719,22.12885981445224,0 120.7995440674239,22.1290303826124,0 120.7985941270646,22.12899308672599,0 120.7979055588636,22.12920899596237,0 120.7976332295068,22.12984087576432,0 120.7973028377119,22.13040042958284,0 120.7969435815459,22.13080640835401,0 120.7962650725698,22.13076040458776,0 120.7956154764251,22.13083184593512,0 120.7956048184403,22.13150017624611,0 120.7958273110086,22.13182559482492,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

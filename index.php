@@ -31,6 +31,7 @@ $conn->close();
         <nav>
             <ul>
                 <li><a href="index.php">首頁</a></li>
+                <li><a href="trails.php">不步道</a></li>
                 <li><a href="leaflet.php">步道地圖</a></li>
                 <li><a href="news.php">最新消息</a></li>
                 <li><a href="weather.php">天氣預報</a></li>

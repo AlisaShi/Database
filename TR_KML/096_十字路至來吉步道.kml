@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="十字路至來吉步道" >
+	<name>十字路至來吉步道</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="LineStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff03b000</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>00000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Folder id="FeatureLayer0">
+		<name>十字路至來吉步道</name>
+		<Snippet maxLines="0"></Snippet>
+		<description>十字路至來吉步道</description>
+		<Placemark id="ID_00000">
+			<name>十字路至來吉步道</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>十字路至來吉步道</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>82</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID</td>
+
+<td>96</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TR_CNAME</td>
+
+<td>十字路至來吉步道</td>
+
+</tr>
+
+<tr>
+
+<td>RA_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>RANAME</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID_O</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_ID</td>
+
+<td>0500</td>
+
+</tr>
+
+<tr>
+
+<td>USER_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>CRT_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr>
+
+<td>MOD_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>STATUS</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MEMO</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_NAME</td>
+
+<td>嘉義林區管理處</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#LineStyle00</styleUrl>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						120.7538897808565,23.49749922139003,0 120.7539416581688,23.49746346508167,0 120.754032438155,23.49740387764394,0 120.7539677409624,23.49736793670634,0 120.7539678961954,23.4972843147542,0 120.7540069990083,23.49715297033858,0 120.7541238835195,23.4969859082208,0 120.7541888021305,23.49690238789518,0 120.7542407695246,23.49681884766558,0 120.7543316159597,23.49672342190415,0 120.7543317266743,23.49666369130197,0 120.7543707176486,23.49659207517783,0 120.7543840457013,23.49638901297378,0 120.7544620064459,23.49625772967078,0 120.7544494513472,23.49604267929405,0 120.7542811564562,23.49599463058136,0 120.75422958814,23.4958631408705,0 120.7542817101178,23.49569597864141,0 120.7542817987049,23.4956481931615,0 120.754243073165,23.49557645614023,0 120.7542432503619,23.49548088738357,0 120.7542564234452,23.49536144713766,0 120.7542823745,23.49533759607788,0 120.7543084566152,23.49524206761391,0 120.7543346493959,23.49508680908097,0 120.7544385800987,23.4949197284496,0 120.7544386686229,23.49487194461783,0 120.7544129850825,23.49475244311025,0 120.754413029349,23.49472855119394,0 120.7544002309736,23.49464490659087,0 120.7544911421658,23.4945136436475,0 120.7545820304635,23.49439432577856,0 120.7546209327618,23.49437049505441,0 120.7547246856992,23.49429898133135,0 120.7546990444273,23.49415558793951,0 120.7547121745395,23.49406003900088,0 120.7546993981397,23.49396444983246,0 120.7546477883412,23.49385685435679,0 120.7546222374823,23.49366567545513,0 120.7543761191751,23.49367723453736,0 120.7543243529763,23.49365326094519,0 120.7543374390274,23.49358160395359,0 120.7544413021384,23.49345036198549,0 120.7542083571303,23.4933424783068,0 120.7542085343303,23.49324691117646,0 120.7542603434454,23.49324699288437,0 120.7543641842374,23.49312769333855,0 120.754390088772,23.4931277341686,0 120.7545329860984,23.49290098402498,0 120.7546368048538,23.4927936332815,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

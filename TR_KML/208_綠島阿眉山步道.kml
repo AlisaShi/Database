@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document id="綠島阿眉山步道" >
+	<name>綠島阿眉山步道</name>
+	<Snippet maxLines="0"></Snippet>
+	<Style id="LineStyle00">
+		<LabelStyle>
+			<color>00000000</color>
+			<scale>0</scale>
+		</LabelStyle>
+		<LineStyle>
+			<color>ff7b0080</color>
+		</LineStyle>
+		<PolyStyle>
+			<color>00000000</color>
+			<outline>0</outline>
+		</PolyStyle>
+	</Style>
+	<Folder id="FeatureLayer0">
+		<name>綠島阿眉山步道</name>
+		<Snippet maxLines="0"></Snippet>
+		<description>綠島阿眉山步道</description>
+		<Placemark id="ID_00000">
+			<name>綠島阿眉山步道</name>
+			<Snippet maxLines="0"></Snippet>
+			<description><![CDATA[<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+
+<head>
+
+<META http-equiv="Content-Type" content="text/html">
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+</head>
+
+<body style="margin:0px 0px 0px 0px;overflow:auto;background:#FFFFFF;">
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-collapse:collapse;padding:3px 3px 3px 3px">
+
+<tr style="text-align:center;font-weight:bold;background:#9CBCE2">
+
+<td>綠島阿眉山步道</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<table style="font-family:Arial,Verdana,Times;font-size:12px;text-align:left;width:100%;border-spacing:0px; padding:3px 3px 3px 3px">
+
+<tr>
+
+<td>FID</td>
+
+<td>145</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>ID</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>TR_CNAME</td>
+
+<td>綠島阿眉山步道</td>
+
+</tr>
+
+<tr>
+
+<td>RA_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>RANAME</td>
+
+<td></td>
+
+</tr>
+
+<tr>
+
+<td>TRAILID_O</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_ID</td>
+
+<td>0700</td>
+
+</tr>
+
+<tr>
+
+<td>USER_ID</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>CRT_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr>
+
+<td>MOD_DATE</td>
+
+<td>上午 12:00:00</td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>STATUS</td>
+
+<td>0</td>
+
+</tr>
+
+<tr>
+
+<td>MEMO</td>
+
+<td></td>
+
+</tr>
+
+<tr bgcolor="#D4E4F3">
+
+<td>DEP_NAME</td>
+
+<td>臺東林區管理處</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>]]></description>
+			<styleUrl>#LineStyle00</styleUrl>
+			<MultiGeometry>
+				<LineString>
+					<coordinates>
+						121.492719,22.65817399932862,0 121.492799,22.65815599932861,0 121.492769,22.65809399932862,0 121.492692,22.65799199932862,0 121.492683,22.65788399932862,0 121.492594,22.65779199932861,0 121.492479,22.65782899932862,0 121.492358,22.65788699932861,0 121.492186,22.65794399932862,0 121.491945,22.65794699932861,0 121.491707,22.6578769993286,0 121.491489,22.65778499932862,0 121.491332,22.65775399932862,0 121.491128,22.65776499932862,0 121.491007,22.65778599932861,0 121.490891,22.65777099932863,0 121.490735,22.65773499932863,0 121.490552,22.65768899932863,0 121.490417,22.65766499932863,0 121.490266,22.65760699932863,0 121.490101,22.65756799932863,0 121.489942,22.65756699932864,0 121.48978,22.65757399932863,0 121.489616,22.65759499932862,0 121.489456,22.65764299932862,0 121.489305,22.65764799932862,0 121.489107,22.65765199932861,0 121.488974,22.65754699932863,0 121.48879,22.65750199932863,0 121.488623,22.65739299932862,0 121.488477,22.65734399932862,0 121.488324,22.65733899932863,0 121.48812,22.65736099932864,0 121.487971,22.65732699932864,0 121.487789,22.65731299932864,0 121.487642,22.65722899932862,0 121.487533,22.65714799932865,0 121.487409,22.65704899932864,0 121.48732,22.65697399932866,0 121.487193,22.65690399932864,0 121.487092,22.65682299932864,0 121.486998,22.65672799932865,0 121.486882,22.65660999932866,0 121.486712,22.65654099932866,0 121.486513,22.65649199932865,0 121.486384,22.65638499932866,0 121.486262,22.65625599932866,0 121.486166,22.65610499932867,0 121.48611,22.65600499932867,0 
+					</coordinates>
+				</LineString>
+			</MultiGeometry>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
