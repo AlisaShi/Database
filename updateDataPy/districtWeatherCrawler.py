@@ -8,7 +8,7 @@ from sqlalchemy.dialects.mysql import insert as mysql_insert
 from datetime import datetime
 
 # Create SQLAlchemy engine and session
-engine = create_engine('mysql+pymysql://root@localhost:3306/test02')
+engine = create_engine('mysql+pymysql://root@localhost:3306/test05')
 Session = sessionmaker(bind=engine)
 session = Session()
 

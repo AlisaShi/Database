@@ -67,8 +67,8 @@ $conn->close();
             </nav>
         </header>
         <main>
-            <div id="map"></div>
             <div id="info">將游標移到地圖上的標記點以查看詳細資訊</div>
+            <div id="map"></div>
 
             <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
             <script>

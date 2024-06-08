@@ -93,7 +93,7 @@ $message = $_GET['message'] ?? '';
                             <td><input type="number" name="altitude_min" value="<?= htmlspecialchars($row['altitude_min']) ?>"></td>
                             <td><input type="number" name="altitude_max" value="<?= htmlspecialchars($row['altitude_max']) ?>"></td>
                             <td><input type="text" name="description" value="<?= htmlspecialchars($row['description']) ?>"></td>
-                            <td><input type="text" name="managing_department" value="<?= htmlspecialchars($row['managing_department']) ?>"></td>
+                            <td><input type="text" name="managing_department" value="<?= htmlspecialchars($row['TR_ID']) ?>"></td>
                             <td><input type="text" name="coordinates" value="<?= htmlspecialchars($row['coordinates']) ?>"></td>
                             <td><input type="checkbox" name="small_vehicle_allowed" value="1" <?= $row['small_vehicle_allowed'] ? 'checked' : '' ?>></td>
                             <td><input type="checkbox" name="large_vehicle_allowed" value="1" <?= $row['large_vehicle_allowed'] ? 'checked' : '' ?>></td>
@@ -120,7 +120,7 @@ $message = $_GET['message'] ?? '';
                     <td><input type="number" name="altitude_min"></td>
                     <td><input type="number" name="altitude_max"></td>
                     <td><input type="text" name="description"></td>
-                    <td><input type="text" name="managing_department"></td>
+                    <td><input type="text" name="TR_ID"></td>
                     <td><input type="text" name="coordinates"></td>
                     <td><input type="checkbox" name="small_vehicle_allowed" value="1"></td>
                     <td><input type="checkbox" name="large_vehicle_allowed" value="1"></td>
