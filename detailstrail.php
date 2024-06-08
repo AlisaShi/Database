@@ -5,7 +5,7 @@ include 'db.php';
 $id = $_GET['id'];
 
 // 查詢 trail 表中的指定數據
-$sql = "SELECT * FROM trail ";
+$sql = "SELECT * FROM trail WHERE TRAILID = $id";;
 $result = $conn->query($sql);
 
 // 檢查是否有查到結果
@@ -26,9 +26,27 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1><?php echo $trail['TR_CNAME']; ?></h1>
+<header>
+<h1><?php echo $trail['TR_CNAME']; ?></h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">首頁</a></li>
+                <li><a href="trails.php">步道地圖</a></li>
+                <li><a href="leaflet.php">林道地圖</a></li>
+                <li><a href="news.php">最新消息</a></li>
+                <li><a href="weather.php">天氣預報</a></li>
+                <li><a href="login.php">會員登入</a></li>
+
+                <li>
+                    <form method="GET" action="results.php">
+                        <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述">
+                        <input type="submit" value="查詢">
+                    </form>
+                </li>
+            </ul>
+        </nav>
     </header>
+    
     <main>
         <p><strong>Trail ID:</strong> <?php echo $trail['TRAILID']; ?></p>
         <p><strong>City ID:</strong> <?php echo $trail['City_ID']; ?></p>

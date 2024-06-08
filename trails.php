@@ -54,14 +54,12 @@
     <h1>步道地圖</h1>
     <nav>
         <ul>
-        <li><a href="index.php">首頁</a></li>
-                <li><a href="leaflet.php">步道地圖</a></li>
-                <li><a href="news.php">最新消息</a></li>
-                <li><a href="weather.php">天氣預報</a></li>
-                <li><a href="login.php">會員登入</a></li>
-                
-        <!-- 你可以在这里添加更多的管理页面链接 -->
-    </ul>
+            <li><a href="index.php">首頁</a></li>
+            <li><a href="leaflet.php">步道地圖</a></li>
+            <li><a href="news.php">最新消息</a></li>
+            <li><a href="weather.php">天氣預報</a></li>
+            <li><a href="login.php">會員登入</a></li>
+        </ul>
     </nav>
 </header>
   <div id="map"></div>
@@ -90,6 +88,11 @@
               layer.eachLayer(function(layer) {
                 var popupContent = `<strong>${trail.TR_CNAME}</strong>`;
                 layer.bindPopup(popupContent);
+
+                // Add click event to redirect to the detail page
+                layer.on('click', function() {
+                  window.location.href = `detailstrail.php?id=${trail.TRAILID}`;
+                });
               });
             })
             .addTo(map);
