@@ -5,7 +5,7 @@ include 'db.php';
 $id = $_GET['id'];
 
 // 根據ID查詢景點的詳細信息
-$sql = "SELECT * FROM location_info WHERE id = $id";
+$sql = "SELECT * FROM `location_info` WHERE id = $id";
 $result = $conn->query($sql);
 
 // 檢查是否查到結果
@@ -153,6 +153,7 @@ if ($result_tr->num_rows > 0) {
                 <?php endif; ?>
             </tbody>
         </table>
+       
     </main>
 </body>
 </html>
