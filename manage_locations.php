@@ -1,6 +1,16 @@
 <?php
 include 'db.php';
 
+session_start();
+
+//check to see if the user is logged in.
+if(isset($_SESSION['email'])) {
+    // User is logged in
+    $email = $_SESSION['email'];
+    $user_id = $_SESSION['user_id'];
+}
+
+
 $sql = "SELECT id, location_name, page_url, opening_time, closing_time, address, altitude_min, altitude_max, description, managing_department, ST_AsText(coordinates) as coordinates, small_vehicle_allowed, large_vehicle_allowed, District_ID, Type_ID, activity_intensity FROM location_info";
 $result = $conn->query($sql);
 
