@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     $location = $result->fetch_assoc();
 } else {
-    echo "找不到該景點的詳細信息。";
+    echo "找不到該景點的詳細訊息。";
     exit();
 }
 
@@ -24,7 +24,7 @@ $result_district = $conn->query($sql_district);
 if ($result_district->num_rows > 0) {
     $district = $result_district->fetch_assoc();
 } else {
-    echo "找不到該區的詳細信息。";
+    echo "找不到該區的詳細訊息。";
     exit();
 }
 

@@ -86,7 +86,7 @@
 
               // Add click event to each layer
               layer.eachLayer(function(layer) {
-                var popupContent = `<strong>${trail.TR_CNAME}</strong>`;
+                var popupContent = `<a href="detailstrail.php?id=${trail.TRAILID}" target="_blank">${trail.TR_CNAME}</a>`;
                 layer.bindPopup(popupContent);
 
                 // Add click event to redirect to the detail page
