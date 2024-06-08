@@ -60,6 +60,7 @@ $message = $_GET['message'] ?? '';
                 <th>難度等級</th>
                 <th>遊覽時間</th>
                 <th>最佳季節</th>
+                <th>KML</th>
             </tr>
         </thead>
         <tbody>
@@ -86,6 +87,7 @@ $message = $_GET['message'] ?? '';
                             <td><input type="number" name="TR_DIF_CLASS" value="<?= htmlspecialchars($row['TR_DIF_CLASS']) ?>"></td>
                             <td><input type="text" name="TR_TOUR" value="<?= htmlspecialchars($row['TR_TOUR']) ?>"></td>
                             <td><input type="text" name="TR_BEST_SEASON" value="<?= htmlspecialchars($row['TR_BEST_SEASON']) ?>"></td>
+                            <td><input type="text" name="TR_KML" value="<?= htmlspecialchars($row['TR_KML']) ?>"</td>
                         </form>
                     </tr>
                 <?php endwhile; ?>
@@ -110,6 +112,7 @@ $message = $_GET['message'] ?? '';
                     <td><input type="number" name="TR_DIF_CLASS"></td>
                     <td><input type="text" name="TR_TOUR"></td>
                     <td><input type="text" name="TR_BEST_SEASON"></td>
+                    <td><input type="text" name="TR_KML"></td>
                 </form>
             </tr>
         </tbody>
