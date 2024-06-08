@@ -64,6 +64,16 @@ if ($result_tr->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>步道資訊</title>
     <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -100,6 +110,7 @@ if ($result_tr->num_rows > 0) {
         <p><strong>Tour:</strong> <?php echo $trail['TR_TOUR']; ?></p>
         <p><strong>Best Season:</strong> <?php echo $trail['TR_BEST_SEASON']; ?></p>
         
+        
         <h2>該地區一周天氣預報:  <?php echo $district['District']; ?></h2>
         <div> 早上: 06:00:00 ~ 18:00:00</div>
         <div> 晚上: 18:00:00 ~ 06:00:00(跨天)</div>
@@ -134,6 +145,7 @@ if ($result_tr->num_rows > 0) {
                             <td><?php echo $data['MaxTemperature']; ?>°C</td>
                             <td><?php echo $data['MinTemperature']; ?>°C</td>
                         </tr>
+                        
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
@@ -142,6 +154,50 @@ if ($result_tr->num_rows > 0) {
                 <?php endif; ?>
             </tbody>
         </table>
+        
+        <div id="map"></div>
+<script>
+    // 初始化地图并设置视图为台湾的中心和适当的缩放级别
+    var map = L.map('map').setView([23.5, 121], 7);
+
+    // 添加 OpenStreetMap 图层
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // 加载KML文件并添加到地图
+    omnivore.kml('<?php echo $trail['TR_KML']; ?>')
+        .on('ready', function() {
+            var layer = this;
+
+            // 调整视图以适应KML文件中的所有线条
+            map.fitBounds(layer.getBounds());
+
+            // 为每个图层添加鼠标事件
+            layer.eachLayer(function(layer) {
+                if (layer.feature && layer.feature.properties) {
+                    var name = "<?php echo $trail['TR_CNAME']; ?>"; // 使用 TR_CNAME
+                    var description = layer.feature.properties.description || "";
+                    var popupContent = "<strong>" + name + "</strong><br>" + description;
+                    layer.bindPopup(popupContent);
+
+                    // 添加鼠标悬停事件
+                    layer.on('mouseover', function(e) {
+                        var popup = L.popup()
+                            .setLatLng(e.latlng)
+                            .setContent(name)
+                            .openOn(map);
+                    });
+
+                    // 添加鼠标离开事件，关闭弹出窗口
+                    layer.on('mouseout', function() {
+                        map.closePopup();
+                    });
+                }
+            });
+        })
+        .addTo(map);
+</script>
 
         <?php $conn->close(); ?>
     </main>
