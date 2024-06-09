@@ -50,7 +50,6 @@ $conn->close();
 
 <body>
     <header>
-    <header>
         <h1>查詢結果</h1>
         <nav>
             <ul>
