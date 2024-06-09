@@ -1,15 +1,6 @@
 <?php
 include 'db.php';
 
-session_start();
-
-//check to see if the user is logged in.
-if(isset($_SESSION['email'])) {
-    // User is logged in
-    $email = $_SESSION['email'];
-    $user_id = $_SESSION['user_id'];
-}
-
 // 取得所有使用者資料
 $sql = "SELECT * FROM user";
 $result = $conn->query($sql);
@@ -59,7 +50,7 @@ $message = $_GET['message'] ?? '';
                 <th>User ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>sex</th>
+                <th>Gender</th>
                 <th>Email</th>
                 <th>Birthday</th>
                 <th>Password</th>
@@ -79,7 +70,7 @@ $message = $_GET['message'] ?? '';
                             <td><?= $row['User_ID'] ?></td>
                             <td><input type="text" name="User_first_name" value="<?= htmlspecialchars($row['User_first_name']) ?>"></td>
                             <td><input type="text" name="User_last_name" value="<?= htmlspecialchars($row['User_last_name']) ?>"></td>
-                            <td><input type="text" name="User_sex" value="<?= htmlspecialchars($row['User_sex']) ?>"></td>
+                            <td><input type="text" name="User_gender" value="<?= htmlspecialchars($row['User_gender']) ?>"></td>
                             <td><input type="email" name="User_email" value="<?= htmlspecialchars($row['User_email']) ?>"></td>
                             <td><input type="date" name="User_birthday" value="<?= htmlspecialchars($row['User_birthday']) ?>"></td>
                             <td><input type="text" name="User_passwd" value="<?= htmlspecialchars($row['User_passwd']) ?>"></td>
@@ -98,7 +89,7 @@ $message = $_GET['message'] ?? '';
                     <td></td>
                     <td><input type="text" name="User_first_name" required></td>
                     <td><input type="text" name="User_last_name" required></td>
-                    <td><input type="text" name="User_sex" required></td>
+                    <td><input type="text" name="User_gender" required></td>
                     <td><input type="email" name="User_email" required></td>
                     <td><input type="date" name="User_birthday" required></td>
                     <td><input type="text" name="User_passwd" required></td>

@@ -11,7 +11,7 @@
         <h1>景點查詢</h1>
     </header>
     <main>
-        <form method="GET" action="results.php">
+        <form method="GET" action="resultsLoginver.php">
             <label for="search">輸入景點關鍵字:</label>
             <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述">
             <input type="submit" value="查詢">

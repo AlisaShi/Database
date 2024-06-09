@@ -33,7 +33,7 @@ if ($result_check->num_rows > 0) {
     echo "此电子邮件已被注册。请使用其他电子邮件。";
 } else {
     // 插入新用户信息
-    $sql = "INSERT INTO user (User_first_name, User_last_name, User_sex, User_email, User_birthday, User_passwd, User_permission) 
+    $sql = "INSERT INTO user (User_first_name, User_last_name, User_gender, User_email, User_birthday, User_passwd, User_permission) 
             VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
 

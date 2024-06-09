@@ -1,13 +1,5 @@
 <?php
 include 'db.php';
-session_start();
-
-//check to see if the user is logged in.
-if(isset($_SESSION['email'])) {
-    // User is logged in
-    $email = $_SESSION['email'];
-    $user_id = $_SESSION['user_id'];
-}
 
 $id = $_POST['id'];
 $location_name = $_POST['location_name'];

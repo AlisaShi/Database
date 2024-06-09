@@ -1,15 +1,6 @@
 <?php
 include 'db.php';
 
-session_start();
-
-//check to see if the user is logged in.
-if(isset($_SESSION['email'])) {
-    // User is logged in
-    $email = $_SESSION['email'];
-    $user_id = $_SESSION['user_id'];
-}
-
 // Get table that contains trailid trail cname and trid and trname and trphone and traddress
 $query = "SELECT * FROM tr_admin ORDER BY TR_ID ASC;";
 $result = $conn->query($query);
