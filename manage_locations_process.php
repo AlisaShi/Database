@@ -1,15 +1,6 @@
 <?php
 include 'db.php';
 
-session_start();
-
-//check to see if the user is logged in.
-if(isset($_SESSION['email'])) {
-    // User is logged in
-    $email = $_SESSION['email'];
-    $user_id = $_SESSION['user_id'];
-}
-
 $message = '';
 
 if (isset($_POST['add'])) {
@@ -22,14 +13,17 @@ if (isset($_POST['add'])) {
     $altitude_max = $_POST['altitude_max'] ?? null;
     $description = $_POST['description'] ?? null;
     $managing_department = $_POST['managing_department'] ?? null;
-    $coordinates = $_POST['coordinates'] ?? null;
+    $x_coord = $_POST['x_coord'];
+    $y_coord = $_POST['y_coord'];
     $small_vehicle_allowed = isset($_POST['small_vehicle_allowed']) ? 1 : 0;
     $large_vehicle_allowed = isset($_POST['large_vehicle_allowed']) ? 1 : 0;
     $District_ID = $_POST['District_ID'];
     $Type_ID = $_POST['Type_ID'];
     $activity_intensity = $_POST['activity_intensity'] ?? null;
 
-    $stmt = $conn->prepare("INSERT INTO location_info (location_name, page_url, opening_time, closing_time, address, altitude_min, altitude_max, description, managing_department, coordinates, small_vehicle_allowed, large_vehicle_allowed, District_ID, Type_ID, activity_intensity) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, PointFromText(?), ?, ?, ?, ?, ?)");
+    $coordinates = "POINT($x_coord $y_coord)";
+
+    $stmt = $conn->prepare("INSERT INTO location_info (location_name, page_url, opening_time, closing_time, address, altitude_min, altitude_max, description, managing_department, coordinates, small_vehicle_allowed, large_vehicle_allowed, District_ID, Type_ID, activity_intensity) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ST_GeomFromText(?), ?, ?, ?, ?, ?)");
     $stmt->bind_param('sssssiisssiiiii', $location_name, $page_url, $opening_time, $closing_time, $address, $altitude_min, $altitude_max, $description, $managing_department, $coordinates, $small_vehicle_allowed, $large_vehicle_allowed, $District_ID, $Type_ID, $activity_intensity);
 
     if ($stmt->execute()) {
@@ -52,14 +46,17 @@ if (isset($_POST['update'])) {
     $altitude_max = $_POST['altitude_max'] ?? null;
     $description = $_POST['description'] ?? null;
     $managing_department = $_POST['managing_department'] ?? null;
-    $coordinates = $_POST['coordinates'] ?? null;
+    $x_coord = $_POST['x_coord'];
+    $y_coord = $_POST['y_coord'];
     $small_vehicle_allowed = isset($_POST['small_vehicle_allowed']) ? 1 : 0;
     $large_vehicle_allowed = isset($_POST['large_vehicle_allowed']) ? 1 : 0;
     $District_ID = $_POST['District_ID'];
     $Type_ID = $_POST['Type_ID'];
     $activity_intensity = $_POST['activity_intensity'] ?? null;
 
-    $stmt = $conn->prepare("UPDATE location_info SET location_name=?, page_url=?, opening_time=?, closing_time=?, address=?, altitude_min=?, altitude_max=?, description=?, managing_department=?, coordinates=PointFromText(?), small_vehicle_allowed=?, large_vehicle_allowed=?, District_ID=?, Type_ID=?, activity_intensity=? WHERE id=?");
+    $coordinates = "POINT($x_coord $y_coord)";
+
+    $stmt = $conn->prepare("UPDATE location_info SET location_name=?, page_url=?, opening_time=?, closing_time=?, address=?, altitude_min=?, altitude_max=?, description=?, managing_department=?, coordinates=ST_GeomFromText(?), small_vehicle_allowed=?, large_vehicle_allowed=?, District_ID=?, Type_ID=?, activity_intensity=? WHERE id=?");
     $stmt->bind_param('sssssiisssiiiiii', $location_name, $page_url, $opening_time, $closing_time, $address, $altitude_min, $altitude_max, $description, $managing_department, $coordinates, $small_vehicle_allowed, $large_vehicle_allowed, $District_ID, $Type_ID, $activity_intensity, $id);
 
     if ($stmt->execute()) {

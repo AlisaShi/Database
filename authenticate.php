@@ -1,21 +1,20 @@
 <?php
-// 啟用錯誤報告
+// 启用错误报告
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-session_start();
 
 include 'db.php';
 
-// 獲取表單數據
+// 获取表单数据
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-// 檢查電子郵件是否存在
+// 检查电子邮件是否存在
 $sql = "SELECT * FROM user WHERE User_email = ?";
 $stmt = $conn->prepare($sql);
 
 if ($stmt === false) {
-    die('準備語句失敗: ' . htmlspecialchars($conn->error));
+    die('准备语句失败: ' . htmlspecialchars($conn->error));
 }
 
 $stmt->bind_param("s", $email);
@@ -23,37 +22,35 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows === 1) {
-    // 獲取用戶數據
+    // 获取用户数据
     $user = $result->fetch_assoc();
 
-    // 驗證密碼
+    // 验证密码
     if (password_verify($password, $user['User_passwd'])) {
-        // 密碼正確，開始會話並設置會話變量
+        // 密码正确，开始会话并设置会话变量
+        session_start();
         $_SESSION['email'] = $email;
-        $_SESSION['permission'] = $user['User_permission'];
-        $_SESSION['user_id'] = $user['User_ID'];
-        $_SESSION['username'] = $user['User_first_name'].' '.$user['User_last_name'];
 
-        // 檢查權限並重定向
+        // 检查权限并重定向
         if ($user['User_permission'] == '1') {
             header("Location: admin.php");
         } else {
-            header("Location: index.php");
+            header("Location: indexLoginver.php");
         }
         exit();
     } else {
-        // 密碼錯誤
+        // 密码错误
         echo "密碼錯誤，請重試。";
         header("Location: index.php");
         exit();
     }
 } else {
-    // 用戶不存在
+    // 用户不存在
     echo "用戶不存在。";
     exit();
 }
 
-// 關閉連接
+// 关闭连接
 $stmt->close();
 $conn->close();
 ?>

@@ -1,28 +1,14 @@
 <?php
 include 'db.php';
-session_start();
 
-// Check if the user is logged in
-if(isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-    $user_id = $_SESSION['user_id'];
-}
-
-// Handle like request
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['like'])) {
-    $item_id = $_POST['item_id'];
-    $item_type = $_POST['item_type'];
-
-    $stmt = $conn->prepare("INSERT INTO user_like (User_ID, Item_ID, Item_Type) VALUES (?, ?, ?)");
-    $stmt->bind_param("iis", $user_id, $item_id, $item_type);
-    $stmt->execute();
-    $stmt->close();
-}
-
-// Get location details
+// 獲取URL中的景點ID
 $id = $_GET['id'];
+
+// 根據ID查詢景點的詳細信息
 $sql = "SELECT * FROM `location_info` WHERE id = $id";
 $result = $conn->query($sql);
+
+// 檢查是否查到結果
 if ($result->num_rows > 0) {
     $location = $result->fetch_assoc();
 } else {
@@ -31,9 +17,10 @@ if ($result->num_rows > 0) {
 }
 
 // Fetch the district information
-$district_id = $location['District_ID'];
+$district_id = $location['District_ID'];  // Assuming you have District_ID in location_info
 $sql_district = "SELECT * FROM district WHERE District_ID = '$district_id'";
 $result_district = $conn->query($sql_district);
+
 if ($result_district->num_rows > 0) {
     $district = $result_district->fetch_assoc();
 } else {
@@ -56,11 +43,11 @@ if ($result_weather->num_rows > 0) {
         $forecast_data[] = $row;
     }
 }
-
 // Fetch the managing department information
-$tr_id = $location['TR_ID'];
+$tr_id = $location['TR_ID']?? null; // Use null coalescing operator to avoid undefined index error
 $sql_tr = "SELECT TR_Name, TR_Phone FROM tr_admin WHERE TR_ID = '$tr_id'";
 $result_tr = $conn->query($sql_tr);
+
 if ($result_tr->num_rows > 0) {
     $tr_info = $result_tr->fetch_assoc();
     $managing_department = $tr_info['TR_Name'] . ', 連絡電話: ' . $tr_info['TR_Phone'];
@@ -102,11 +89,14 @@ if ($result_tr->num_rows > 0) {
                 <li><a href="news.php">最新消息</a></li>
                 <li><a href="weather.php">天氣預報</a></li>
                 <li><a href="login.php">會員登入</a></li>
+
                 <li>
                     <form method="GET" action="results.php">
                         <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述">
                         <input type="submit" value="查詢">
                     </form>
+                    <button onclick="window.location.href='results.php'">返回列表</button>
+                    <button onclick="window.location.href='index.php'">返回首頁</button>
                 </li>
             </ul>
         </nav>
@@ -122,16 +112,10 @@ if ($result_tr->num_rows > 0) {
         <p><strong>是否允許小型車進入:</strong> <?php echo $location['small_vehicle_allowed'] ? 'Yes' : 'No'; ?></p>
         <p><strong>是否允許大型車進入:</strong> <?php echo $location['large_vehicle_allowed'] ? 'Yes' : 'No'; ?></p>
 
-        <!-- Like Button -->
-        <form method="POST" action="details.php?id=<?php echo $id; ?>">
-            <input type="hidden" name="item_id" value="<?php echo $id; ?>">
-            <input type="hidden" name="item_type" value="location">
-            <button type="submit" name="like">Like</button>
-        </form>
 
         <h2>該地區一周天氣預報:  <?php echo $district['District']; ?></h2>
         <div> 早上: 06:00:00 ~ 18:00:00</div>
-        <div> 晚上: 18:00:00 ~ (隔日)06:00:00</div>
+        <div> 晚上: 18:00:00 ~ 06:00:00(跨天)</div>
         <table>
             <thead>
                 <tr>
@@ -147,16 +131,7 @@ if ($result_tr->num_rows > 0) {
                 <?php if (!empty($forecast_data)): ?>
                     <?php foreach ($forecast_data as $data): ?>
                         <tr>
-                            <td>
-                                <?php
-                                    $start_time = date("H:i:s", strtotime($data['Start_Time']));
-                                    if ($start_time == "00:00:00") {
-                                        echo date("Y-m-d", strtotime($data['Start_Time']) - 1); 
-                                    } else {
-                                        echo date("Y-m-d", strtotime($data['Start_Time']));
-                                    }
-                                ?>
-                            </td>
+                            <td><?php echo date("Y-m-d", strtotime($data['Start_Time'])); ?></td>
                             <td colspan="1">
                                 <?php 
                                     $end_time = date("H:i:s", strtotime($data['End_Time']));
@@ -167,7 +142,7 @@ if ($result_tr->num_rows > 0) {
                                     }
                                 ?>
                             </td>
-                            <td><?php echo date("l", strtotime($data['Start_Time']) - 1); ?></td>
+                            <td><?php echo date("l", strtotime($data['Start_Time'])); ?></td>
                             <td><?php echo $data['Weather_Type']; ?></td>
                             <td><?php echo $data['MaxTemperature']; ?>°C</td>
                             <td><?php echo $data['MinTemperature']; ?>°C</td>
@@ -180,6 +155,7 @@ if ($result_tr->num_rows > 0) {
                 <?php endif; ?>
             </tbody>
         </table>
+        
     </main>
 </body>
 </html>
