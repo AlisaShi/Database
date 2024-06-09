@@ -1,7 +1,16 @@
 <?php
 include 'db.php';
 
-$sql = "SELECT id, location_name, page_url, opening_time, closing_time, address, altitude_min, altitude_max, description, managing_department, ST_AsText(coordinates) as coordinates, small_vehicle_allowed, large_vehicle_allowed, District_ID, Type_ID, activity_intensity FROM location_info";
+session_start();
+
+//check to see if the user is logged in.
+if(isset($_SESSION['email'])) {
+    // User is logged in
+    $email = $_SESSION['email'];
+    $user_id = $_SESSION['user_id'];
+}
+
+$sql = "SELECT * FROM location_info";
 $result = $conn->query($sql);
 
 $message = $_GET['message'] ?? '';
@@ -34,7 +43,7 @@ $message = $_GET['message'] ?? '';
         <li><a href="manage_trails.php">管理步道</a></li>
         <li><a href="manage_users.php">管理使用者</a></li>
         <li><a href="manage_departments.php">管理部門</a></li>
-        <!-- 你可以在這裡添加更多的管理頁面鏈接 -->
+        <!-- 你可以在这里添加更多的管理页面链接 -->
     </ul>
     </nav>
     </header>
@@ -56,8 +65,7 @@ $message = $_GET['message'] ?? '';
                 <th>Altitude Max</th>
                 <th>Description</th>
                 <th>Managing Department</th>
-                <th>Coordinates (X)</th>
-                <th>Coordinates (Y)</th>
+                <th>Coordinates</th>
                 <th>Small Vehicle Allowed</th>
                 <th>Large Vehicle Allowed</th>
                 <th>District ID</th>
@@ -68,18 +76,13 @@ $message = $_GET['message'] ?? '';
         <tbody>
             <?php if ($result->num_rows > 0) : ?>
                 <?php while($row = $result->fetch_assoc()) : ?>
-                    <?php
-                        // 解析 coordinates 字段
-                        preg_match('/POINT\(([^ ]+) ([^ ]+)\)/', $row['coordinates'], $matches);
-                        $x_coord = $matches[1] ?? '';
-                        $y_coord = $matches[2] ?? '';
-                    ?>
                     <tr>
                         <form action="manage_locations_process.php" method="post">
                             <td>
                                 <input type="hidden" name="id" value="<?= $row['id'] ?>">
                                 <button type="submit" name="update">更新</button>
                                 <button type="submit" name="delete" onclick="return confirm('確定要刪除這個紀錄嗎?')">刪除</button>
+
                             </td>
                             <td><?= $row['id'] ?></td>
                             <td><input type="text" name="location_name" value="<?= htmlspecialchars($row['location_name']) ?>"></td>
@@ -90,9 +93,8 @@ $message = $_GET['message'] ?? '';
                             <td><input type="number" name="altitude_min" value="<?= htmlspecialchars($row['altitude_min']) ?>"></td>
                             <td><input type="number" name="altitude_max" value="<?= htmlspecialchars($row['altitude_max']) ?>"></td>
                             <td><input type="text" name="description" value="<?= htmlspecialchars($row['description']) ?>"></td>
-                            <td><input type="text" name="managing_department" value="<?= htmlspecialchars($row['managing_department']) ?>"></td>
-                            <td><input type="text" name="x_coord" value="<?= htmlspecialchars($x_coord) ?>"></td>
-                            <td><input type="text" name="y_coord" value="<?= htmlspecialchars($y_coord) ?>"></td>
+                            <td><input type="text" name="managing_department" value="<?= htmlspecialchars($row['TR_ID']) ?>"></td>
+                            <td><input type="text" name="coordinates" value="<?= htmlspecialchars($row['coordinates']) ?>"></td>
                             <td><input type="checkbox" name="small_vehicle_allowed" value="1" <?= $row['small_vehicle_allowed'] ? 'checked' : '' ?>></td>
                             <td><input type="checkbox" name="large_vehicle_allowed" value="1" <?= $row['large_vehicle_allowed'] ? 'checked' : '' ?>></td>
                             <td><input type="text" name="District_ID" value="<?= htmlspecialchars($row['District_ID']) ?>"></td>
@@ -118,9 +120,8 @@ $message = $_GET['message'] ?? '';
                     <td><input type="number" name="altitude_min"></td>
                     <td><input type="number" name="altitude_max"></td>
                     <td><input type="text" name="description"></td>
-                    <td><input type="text" name="managing_department"></td>
-                    <td><input type="text" name="x_coord"></td>
-                    <td><input type="text" name="y_coord"></td>
+                    <td><input type="text" name="TR_ID"></td>
+                    <td><input type="text" name="coordinates"></td>
                     <td><input type="checkbox" name="small_vehicle_allowed" value="1"></td>
                     <td><input type="checkbox" name="large_vehicle_allowed" value="1"></td>
                     <td><input type="text" name="District_ID"></td>

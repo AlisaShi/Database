@@ -197,6 +197,415 @@
 		</Pair>
 	</StyleMap>
 	<Folder>
+		<name>筏灣泰武步道景點註記</name>
+		<Placemark>
+			<name>0.5K</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">0.5K</SimpleData>
+					<SimpleData name="name1">0.5K</SimpleData>
+					<SimpleData name="C">里程</SimpleData>
+					<SimpleData name="X">220398.000000</SimpleData>
+					<SimpleData name="Y">2503036.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7120201472058,22.62724086304078,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>1.5K</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">1.5K</SimpleData>
+					<SimpleData name="name1">1.5K</SimpleData>
+					<SimpleData name="C">里程</SimpleData>
+					<SimpleData name="X">220258.000000</SimpleData>
+					<SimpleData name="Y">2503717.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7106453117151,22.63338855046227,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>2.0K</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">2.0K</SimpleData>
+					<SimpleData name="name1">2.0K</SimpleData>
+					<SimpleData name="C">里程</SimpleData>
+					<SimpleData name="X">219935.000000</SimpleData>
+					<SimpleData name="Y">2503809.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7075011743696,22.63421370552031,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>3.0K</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">3.0K</SimpleData>
+					<SimpleData name="name1">3.0K</SimpleData>
+					<SimpleData name="C">里程</SimpleData>
+					<SimpleData name="X">219576.000000</SimpleData>
+					<SimpleData name="Y">2504529.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7039946125342,22.64070963675023,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>4.0K</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">4.0K</SimpleData>
+					<SimpleData name="name1">4.0K</SimpleData>
+					<SimpleData name="C">里程</SimpleData>
+					<SimpleData name="X">219586.000000</SimpleData>
+					<SimpleData name="Y">2505245.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.704078052847,22.64717602608776,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>大石壁</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">大石壁</SimpleData>
+					<SimpleData name="name1">大石壁1</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">219649.000000</SimpleData>
+					<SimpleData name="Y">2504814.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7046993452478,22.6432847875545,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>大石壁</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">大石壁</SimpleData>
+					<SimpleData name="name1">大石壁2</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">220249.000000</SimpleData>
+					<SimpleData name="Y">2507344.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7104890906111,22.66614389428304,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>大武山自然保留區監測站</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">大武山自然保留區監測站</SimpleData>
+					<SimpleData name="name1">大武山自然保留區監測站</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">220555.000000</SimpleData>
+					<SimpleData name="Y">2502821.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7135515129649,22.62530192256129,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>水源</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">水源</SimpleData>
+					<SimpleData name="name1">小溪水源01</SimpleData>
+					<SimpleData name="C">水源</SimpleData>
+					<SimpleData name="X">220377.000000</SimpleData>
+					<SimpleData name="Y">2503425.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7118085290818,22.63075357161511,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>水源</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">水源</SimpleData>
+					<SimpleData name="name1">小溪水源02</SimpleData>
+					<SimpleData name="C">水源</SimpleData>
+					<SimpleData name="X">220145.000000</SimpleData>
+					<SimpleData name="Y">2503759.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7095451682702,22.63376586682458,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>水源</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">水源</SimpleData>
+					<SimpleData name="name1">小溪水源03</SimpleData>
+					<SimpleData name="C">水源</SimpleData>
+					<SimpleData name="X">219641.000000</SimpleData>
+					<SimpleData name="Y">2504757.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7046226105824,22.64276987599738,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>水源</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">水源</SimpleData>
+					<SimpleData name="name1">水源</SimpleData>
+					<SimpleData name="C">水源</SimpleData>
+					<SimpleData name="X">220398.000000</SimpleData>
+					<SimpleData name="Y">2503153.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7120179461066,22.62829749516813,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>四岔路口</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">四岔路口</SimpleData>
+					<SimpleData name="name1">四岔路口</SimpleData>
+					<SimpleData name="C">交通</SimpleData>
+					<SimpleData name="X">219774.000000</SimpleData>
+					<SimpleData name="Y">2505222.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7059076777862,22.64697167882974,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>舊筏灣國小</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">舊筏灣國小</SimpleData>
+					<SimpleData name="name1">平和國小(廢)</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">220440.000000</SimpleData>
+					<SimpleData name="Y">2507472.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7123453088574,22.66730321031995,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>休憩瞭望點</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">休憩瞭望點</SimpleData>
+					<SimpleData name="name1">休憩瞭望點</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">220368.000000</SimpleData>
+					<SimpleData name="Y">2503557.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7117184858737,22.63194551149902,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>停車處(新登山口)</name>
+			<styleUrl>#msn_blu-circle0</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">停車處(新登山口)</SimpleData>
+					<SimpleData name="name1">停車處(新登山口)</SimpleData>
+					<SimpleData name="C">交通</SimpleData>
+					<SimpleData name="X">219338.000000</SimpleData>
+					<SimpleData name="Y">2501623.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7017356811236,22.61446115570244,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>第二休憩區</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">第二休憩區</SimpleData>
+					<SimpleData name="name1">第二休憩區</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">219292.000000</SimpleData>
+					<SimpleData name="Y">2505885.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7012050175062,22.65295056656233,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>廁所</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">廁所</SimpleData>
+					<SimpleData name="name1">廁所</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">220582.000000</SimpleData>
+					<SimpleData name="Y">2502768.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7138151640779,22.62482374576764,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>登山口</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">登山口</SimpleData>
+					<SimpleData name="name1">登山口</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">220658.000000</SimpleData>
+					<SimpleData name="Y">2502721.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7145553781721,22.62440060359504,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>臨時廁所</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">臨時廁所</SimpleData>
+					<SimpleData name="name1">臨時廁所</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">220631.000000</SimpleData>
+					<SimpleData name="Y">2502777.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7142916744438,22.62490587481282,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>水源</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">水源</SimpleData>
+					<SimpleData name="name1">瀑布區</SimpleData>
+					<SimpleData name="C">水源</SimpleData>
+					<SimpleData name="X">220127.000000</SimpleData>
+					<SimpleData name="Y">2503866.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7093680185516,22.63473187027281,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>舊筏灣石板屋</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">舊筏灣石板屋</SimpleData>
+					<SimpleData name="name1">舊筏灣石板屋</SimpleData>
+					<SimpleData name="C">步道設施</SimpleData>
+					<SimpleData name="X">220371.000000</SimpleData>
+					<SimpleData name="Y">2507299.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7116771263105,22.66573964026327,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>萬安社</name>
+			<styleUrl>#msn_blu-circle</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">萬安社</SimpleData>
+					<SimpleData name="name1">萬安社</SimpleData>
+					<SimpleData name="C">人文歷史</SimpleData>
+					<SimpleData name="X">0.000000</SimpleData>
+					<SimpleData name="Y">0.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.6774592295447,22.62977604171551,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>平和社</name>
+			<styleUrl>#msn_blu-circle1</styleUrl>
+			<ExtendedData>
+				<SchemaData schemaUrl="#132_1">
+					<SimpleData name="Name">平和社</SimpleData>
+					<SimpleData name="name1">平和社</SimpleData>
+					<SimpleData name="C">人文歷史</SimpleData>
+					<SimpleData name="X">0.000000</SimpleData>
+					<SimpleData name="Y">0.000000</SimpleData>
+					<SimpleData name="H"></SimpleData>
+				</SchemaData>
+			</ExtendedData>
+			<Point>
+				<coordinates>120.7167225323749,22.64921279421682,0</coordinates>
+			</Point>
+		</Placemark>
 		<Schema name="132_1" id="132_1">
         <SimpleField name="Name" type="string"></SimpleField>
         <SimpleField name="Description" type="string"></SimpleField>
