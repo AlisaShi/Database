@@ -35,7 +35,7 @@ if ($result->num_rows === 1) {
         if ($user['User_permission'] == '1') {
             header("Location: admin.php");
         } else {
-            header("Location: indexLoginver.php");
+            header("Location: index.php");
         }
         exit();
     } else {

@@ -45,6 +45,7 @@ $conn->close();
                 <li><a href="news.php">最新消息</a></li>
                 <li><a href="weather.php">天氣預報</a></li>
                 <li><a href="login.php">會員登入</a></li>
+                <li><a href="note.php">筆記</a></li>
 
                 <li>
                     <form method="GET" action="results.php">
