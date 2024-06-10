@@ -1,8 +1,7 @@
 <?php
-include('header.php');
-?>
-<?php
+session_start();
 include 'db.php';
+
 
 // Get user input
 $search_term = isset($_GET['search']) ? $_GET['search'] : '';
@@ -98,9 +97,16 @@ $conn->close();
         }
     </style>
 </head>
-
+<?php
+include('header.php');
+?>
+<header>
+    <nav>
+        <h1>查詢結果</h1>
+    </nav>
+</header>
 <body>
-    <h1>查詢結果</h1>
+   
     
     <main>
         <form method="GET" action="results.php" id="search-form">
