@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 include 'db.php';
 
 // Sanitize and validate the ID parameter
@@ -63,6 +64,8 @@ if ($tr_id) {
         $managing_department = $tr_info['TR_Name'] . ', 連絡電話: ' . $tr_info['TR_Phone'];
     }
 }
+$is_logged_in = isset($_SESSION['User_ID']);
+$message = $_GET['message'] ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -104,8 +107,8 @@ include('header.php');
             </script>
         <?php endif; ?>
     <?php if ($is_logged_in): ?>
-        <button onclick="window.location.href='favorite.php?action=add&location_id=<?php echo $id; ?>'">收藏</button>
-        <button onclick="window.location.href='notes.php?location_id=<?php echo $id; ?>'">管理筆記與待辦事項</button>
+        <button onclick="window.location.href='favoritetrail.php?action=add&TRAILID=<?php echo $id; ?>'">收藏</button>
+        <button onclick="window.location.href='notes_trails.php?TRAILID=<?php echo $id; ?>'">管理筆記與待辦事項</button>
     <?php else: ?>
         <p>請<a href="login.php">登入</a>以收藏景點和管理筆記。</p>
     <?php endif; ?>
