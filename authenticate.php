@@ -1,56 +1,34 @@
 <?php
-// 启用错误报告
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+include('db_config.php');
 
-include 'db.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $email = $_POST['User_email'];
+    $password = $_POST['User_passwd'];
 
-// 获取表单数据
-$email = $_POST['email'];
-$password = $_POST['password'];
+    $sql = "SELECT User_ID, User_first_name, User_passwd FROM user WHERE User_email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-// 检查电子邮件是否存在
-$sql = "SELECT * FROM user WHERE User_email = ?";
-$stmt = $conn->prepare($sql);
-
-if ($stmt === false) {
-    die('准备语句失败: ' . htmlspecialchars($conn->error));
-}
-
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
-
-if ($result->num_rows === 1) {
-    // 获取用户数据
-    $user = $result->fetch_assoc();
-
-    // 验证密码
-    if (password_verify($password, $user['User_passwd'])) {
-        // 密码正确，开始会话并设置会话变量
-        session_start();
-        $_SESSION['email'] = $email;
-
-        // 检查权限并重定向
-        if ($user['User_permission'] == '1') {
-            header("Location: admin.php");
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if (password_verify($password, $row['User_passwd'])) {
+            // 密碼正確
+            $_SESSION['User_ID'] = $row['User_ID'];
+            $_SESSION['User_first_name'] = $row['User_first_name'];
+            $_SESSION['user_id'] = $row['User_ID'];
+            header('Location: index.php');
+            exit();
         } else {
-            header("Location: index.php");
+            // 密碼錯誤
+            echo "密碼錯誤，請重試。";
         }
-        exit();
     } else {
-        // 密码错误
-        echo "密碼錯誤，請重試。";
-        header("Location: index.php");
-        exit();
+        // 電子郵件不存在
+        echo "此電子郵件未註冊。";
     }
-} else {
-    // 用户不存在
-    echo "用戶不存在。";
-    exit();
-}
 
-// 关闭连接
-$stmt->close();
-$conn->close();
-?>
+    $stmt->close();
+    $conn->close();
+}

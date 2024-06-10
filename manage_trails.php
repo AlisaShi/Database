@@ -1,4 +1,7 @@
 <?php
+include('header.php');
+?>
+<?php
 include 'db.php';
 
 $sql = "SELECT * FROM trail";
@@ -9,38 +12,32 @@ $message = $_GET['message'] ?? '';
 
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <title>管理步道資訊</title>
     <link rel="stylesheet" href="styles.css">
-    
+
     <style>
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
             padding: 10px;
         }
-        th, td {
+
+        th,
+        td {
             text-align: left;
         }
     </style>
 </head>
+
 <body>
-<header>
-<h1>管理步道資訊</h1>
-    <nav>
-        <ul>
-        <li><a href="admin.php">首頁</a></li>
-        <li><a href="manage_locations.php">管理景點</a></li>
-        <li><a href="manage_trails.php">管理步道</a></li>
-        <li><a href="manage_users.php">管理使用者</a></li>
-        <li><a href="manage_departments.php">管理部門</a></li>
-        <!-- 你可以在这里添加更多的管理页面链接 -->
-    </ul>
-    </nav>
-    </header>
-    
-    <?php if ($message): ?>
+    <h1>管理步道資訊</h1>
+
+    <?php if ($message) : ?>
         <p><?= htmlspecialchars($message) ?></p>
     <?php endif; ?>
     <table>
@@ -65,7 +62,7 @@ $message = $_GET['message'] ?? '';
         </thead>
         <tbody>
             <?php if ($result->num_rows > 0) : ?>
-                <?php while($row = $result->fetch_assoc()) : ?>
+                <?php while ($row = $result->fetch_assoc()) : ?>
                     <tr>
                         <form action="manage_trails_process.php" method="post">
                             <td>
@@ -87,7 +84,7 @@ $message = $_GET['message'] ?? '';
                             <td><input type="number" name="TR_DIF_CLASS" value="<?= htmlspecialchars($row['TR_DIF_CLASS']) ?>"></td>
                             <td><input type="text" name="TR_TOUR" value="<?= htmlspecialchars($row['TR_TOUR']) ?>"></td>
                             <td><input type="text" name="TR_BEST_SEASON" value="<?= htmlspecialchars($row['TR_BEST_SEASON']) ?>"></td>
-                            <td><input type="text" name="TR_KML" value="<?= htmlspecialchars($row['TR_KML']) ?>"</td>
+                            <td><input type="text" name="TR_KML" value="<?= htmlspecialchars($row['TR_KML']) ?>" </td>
                         </form>
                     </tr>
                 <?php endwhile; ?>
@@ -118,4 +115,5 @@ $message = $_GET['message'] ?? '';
         </tbody>
     </table>
 </body>
+
 </html>

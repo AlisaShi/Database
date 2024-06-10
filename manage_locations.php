@@ -1,4 +1,7 @@
 <?php
+include('header.php');
+?>
+<?php
 include 'db.php';
 
 $sql = "SELECT id, location_name, page_url, opening_time, closing_time, address, altitude_min, altitude_max, description, managing_department, ST_AsText(coordinates) as coordinates, small_vehicle_allowed, large_vehicle_allowed, District_ID, Type_ID, activity_intensity FROM location_info";
@@ -9,37 +12,31 @@ $message = $_GET['message'] ?? '';
 
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <title>管理景點位置</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
             padding: 10px;
         }
-        th, td {
+
+        th,
+        td {
             text-align: left;
         }
     </style>
 </head>
+
 <body>
-    <header>
     <h1>管理景點位置</h1>
-    <nav>
-        <ul>
-        <li><a href="admin.php">首頁</a></li>
-        <li><a href="manage_locations.php">管理景點</a></li>
-        <li><a href="manage_trails.php">管理步道</a></li>
-        <li><a href="manage_users.php">管理使用者</a></li>
-        <li><a href="manage_departments.php">管理部門</a></li>
-        <!-- 你可以在這裡添加更多的管理頁面鏈接 -->
-    </ul>
-    </nav>
-    </header>
-    
-    <?php if ($message): ?>
+
+    <?php if ($message) : ?>
         <p><?= htmlspecialchars($message) ?></p>
     <?php endif; ?>
     <table>
@@ -67,12 +64,12 @@ $message = $_GET['message'] ?? '';
         </thead>
         <tbody>
             <?php if ($result->num_rows > 0) : ?>
-                <?php while($row = $result->fetch_assoc()) : ?>
+                <?php while ($row = $result->fetch_assoc()) : ?>
                     <?php
-                        // 解析 coordinates 字段
-                        preg_match('/POINT\(([^ ]+) ([^ ]+)\)/', $row['coordinates'], $matches);
-                        $x_coord = $matches[1] ?? '';
-                        $y_coord = $matches[2] ?? '';
+                    // 解析 coordinates 字段
+                    preg_match('/POINT\(([^ ]+) ([^ ]+)\)/', $row['coordinates'], $matches);
+                    $x_coord = $matches[1] ?? '';
+                    $y_coord = $matches[2] ?? '';
                     ?>
                     <tr>
                         <form action="manage_locations_process.php" method="post">
@@ -131,4 +128,5 @@ $message = $_GET['message'] ?? '';
         </tbody>
     </table>
 </body>
+
 </html>

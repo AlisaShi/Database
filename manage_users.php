@@ -1,4 +1,7 @@
 <?php
+include('header.php');
+?>
+<?php
 include 'db.php';
 
 // 取得所有使用者資料
@@ -11,36 +14,30 @@ $message = $_GET['message'] ?? '';
 
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <title>管理使用者</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
             padding: 10px;
         }
-        th, td {
+
+        th,
+        td {
             text-align: left;
         }
     </style>
 </head>
+
 <body>
-    
-    <header>
     <h1>管理使用者</h1>
-    <nav>
-        <ul>
-        <li><a href="admin.php">首頁</a></li>
-        <li><a href="manage_locations.php">管理景點</a></li>
-        <li><a href="manage_trails.php">管理步道</a></li>
-        <li><a href="manage_users.php">管理使用者</a></li>
-        <li><a href="manage_departments.php">管理部門</a></li>
-    </ul>
-    </nav>
-    </header>
-    <?php if ($message): ?>
+    <?php if ($message) : ?>
         <p><?= htmlspecialchars($message) ?></p>
     <?php endif; ?>
     <table>
@@ -58,8 +55,8 @@ $message = $_GET['message'] ?? '';
             </tr>
         </thead>
         <tbody>
-            <?php if ($result->num_rows > 0): ?>
-                <?php while ($row = $result->fetch_assoc()): ?>
+            <?php if ($result->num_rows > 0) : ?>
+                <?php while ($row = $result->fetch_assoc()) : ?>
                     <tr>
                         <form action="manage_users_process.php" method="post">
                             <td>
@@ -78,7 +75,7 @@ $message = $_GET['message'] ?? '';
                         </form>
                     </tr>
                 <?php endwhile; ?>
-            <?php else: ?>
+            <?php else : ?>
                 <tr>
                     <td colspan="8">無資料</td>
                 </tr>
@@ -99,4 +96,5 @@ $message = $_GET['message'] ?? '';
         </tbody>
     </table>
 </body>
+
 </html>

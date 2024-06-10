@@ -1,30 +1,38 @@
+<?php
+include('header.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="admin/styles.css">
-   
+
     <style>
-        #map { height: 600px; }
-        #info { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
-        #gameCanvas { border: 1px solid #000000; }
-        #startButton { margin-top: 20px; padding: 10px; }
+        #map {
+            height: 600px;
+        }
+
+        #info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #gameCanvas {
+            border: 1px solid #000000;
+        }
+
+        #startButton {
+            margin-top: 20px;
+            padding: 10px;
+        }
     </style>
 </head>
+
 <body>
-    <header>
-    <h1>Admin Dashboard</h1>
-    <nav>
-        <ul>
-        <li><a href="manage_locations.php">管理景點</a></li>
-        <li><a href="manage_users.php">管理使用者</a></li>
-        <li><a href="manage_trails.php">管理步道</a></li>
-        <li><a href="manage_departments.php">管理部門</a></li>
-        <!-- 你可以在这里添加更多的管理页面链接 -->
-    </ul>
-    </nav>
-    </header>
+
     <canvas id="gameCanvas" width="1200" height="600"></canvas>
     <button id="startButton">Start Game</button>
 
@@ -43,18 +51,40 @@
         }
 
         const shapes = [
-            [[1, 1, 1, 1]],  // I
-            [[1, 1, 1], [0, 1, 0]],  // T
-            [[1, 1, 0], [0, 1, 1]],  // Z
-            [[0, 1, 1], [1, 1, 0]],  // S
-            [[1, 1], [1, 1]],  // O
-            [[1, 1, 1], [1, 0, 0]],  // L
-            [[1, 1, 1], [0, 0, 1]]   // J
+            [
+                [1, 1, 1, 1]
+            ], // I
+            [
+                [1, 1, 1],
+                [0, 1, 0]
+            ], // T
+            [
+                [1, 1, 0],
+                [0, 1, 1]
+            ], // Z
+            [
+                [0, 1, 1],
+                [1, 1, 0]
+            ], // S
+            [
+                [1, 1],
+                [1, 1]
+            ], // O
+            [
+                [1, 1, 1],
+                [1, 0, 0]
+            ], // L
+            [
+                [1, 1, 1],
+                [0, 0, 1]
+            ] // J
         ];
 
         const colors = ['cyan', 'purple', 'red', 'green', 'yellow', 'orange', 'blue'];
 
-        let board = Array.from({ length: ROWS }, () => Array(COLS).fill(0));
+        let board = Array.from({
+            length: ROWS
+        }, () => Array(COLS).fill(0));
 
         function drawBoard() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -167,9 +197,12 @@
         });
 
         let gameInterval;
+
         function startGame() {
             piece = createPiece();
-            board = Array.from({ length: ROWS }, () => Array(COLS).fill(0));
+            board = Array.from({
+                length: ROWS
+            }, () => Array(COLS).fill(0));
             if (gameInterval) {
                 clearInterval(gameInterval);
             }
@@ -185,4 +218,5 @@
         drawBoard();
     </script>
 </body>
+
 </html>

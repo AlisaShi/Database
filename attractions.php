@@ -1,4 +1,7 @@
 <?php
+include('header.php');
+?>
+<?php
 include 'db.php';
 
 // 獲取城市列表
@@ -12,26 +15,15 @@ $result_district = $conn->query($sql_district);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>景點查詢</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>景點查詢</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">首頁</a></li>
-                <li><a href="attractions.php">景點查詢</a></li>
-                <li><a href="news.php">最新消息</a></li>
-                <li><a href="weather.php">天氣預報</a></li>
-                <li><a href="login.php">會員登入</a></li>
-                <li><a href="register.php">會員註冊</a></li>
-            </ul>
-        </nav>
-    </header>
     <main>
         <h2>景點查詢</h2>
         <form action="search_attractions.php" method="GET">
@@ -39,7 +31,7 @@ $result_district = $conn->query($sql_district);
             <select name="city" id="city">
                 <?php
                 if ($result_city->num_rows > 0) {
-                    while($row = $result_city->fetch_assoc()) {
+                    while ($row = $result_city->fetch_assoc()) {
                         echo "<option value='{$row['City_ID']}'>{$row['City']}</option>";
                     }
                 } else {
@@ -51,7 +43,7 @@ $result_district = $conn->query($sql_district);
             <select name="district" id="district">
                 <?php
                 if ($result_district->num_rows > 0) {
-                    while($row = $result_district->fetch_assoc()) {
+                    while ($row = $result_district->fetch_assoc()) {
                         echo "<option value='{$row['District_ID']}'>{$row['District']}</option>";
                     }
                 } else {
@@ -63,6 +55,7 @@ $result_district = $conn->query($sql_district);
         </form>
     </main>
 </body>
+
 </html>
 
 <?php

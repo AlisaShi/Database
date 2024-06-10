@@ -1,9 +1,12 @@
 <?php
+include('header.php');
+?>
+<?php
 include 'db.php';
 session_start();
 
 // Check if the user is logged in
-if(isset($_SESSION['email'])) {
+if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
     $user_id = $_SESSION['user_id'];
 } else {
@@ -66,26 +69,20 @@ $stmt->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>筆記</title>
     <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>筆記</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.php">首頁</a></li>
-                    <li><a href="trails.php">步道地圖</a></li>
-                    <li><a href="leaflet.php">林道地圖</a></li>
-                    <li><a href="news.php">最新消息</a></li>
-                    <li><a href="weather.php">天氣預報</a></li>
-                    <li><a href="login.php">會員登入</a></li>
-                </ul>
-            </nav>
-        </header>
+</head>
+
+<body>
+    <?php
+    include('header.php');
+    ?>
+    <h1>筆記</h1>
+    
     <main>
         <h2>收藏的景點與步道</h2>
         <table>
@@ -96,14 +93,14 @@ $stmt->close();
                 </tr>
             </thead>
             <tbody>
-                <?php if (!empty($liked_items)): ?>
-                    <?php foreach ($liked_items as $item): ?>
+                <?php if (!empty($liked_items)) : ?>
+                    <?php foreach ($liked_items as $item) : ?>
                         <tr>
                             <td><?php echo htmlspecialchars($item['Name'], ENT_QUOTES, 'UTF-8'); ?></td>
                             <td><?php echo $item['Type'] === 'location' ? '景點' : '步道'; ?></td>
                         </tr>
                     <?php endforeach; ?>
-                <?php else: ?>
+                <?php else : ?>
                     <tr>
                         <td colspan="2">尚未收藏任何景點或步道。</td>
                     </tr>
@@ -121,10 +118,10 @@ $stmt->close();
             <textarea id="content" name="content" required></textarea>
             <button type="submit" name="add_note">新增</button>
         </form>
-        
+
         <h2>我的筆記</h2>
         <ul>
-            <?php foreach ($notes as $note): ?>
+            <?php foreach ($notes as $note) : ?>
                 <li>
                     <h3><?php echo htmlspecialchars($note['Title']); ?></h3>
                     <p><?php echo nl2br(htmlspecialchars($note['Content'])); ?></p>
@@ -135,4 +132,5 @@ $stmt->close();
 
     </main>
 </body>
+
 </html>

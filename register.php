@@ -1,26 +1,20 @@
+<?php
+include('header.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會員註冊</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <h1>會員註冊</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">首頁</a></li>
-                <li><a href="news.php">最新消息</a></li>
-                <li><a href="weather.php">天氣預報</a></li>
-                <li><a href="login.php">會員登入</a></li>
-                <li><a href="register.php">會員註冊</a></li>
-            </ul>
-        </nav>
-    </header>
+    <h1>會員註冊</h1>
+
     <main>
-        <h2>註冊</h2>
         <form action="register_process.php" method="POST">
             <label for="first_name">名字：</label>
             <input type="text" id="first_name" name="first_name" required><br>
@@ -34,9 +28,10 @@
             <input type="date" id="birthday" name="birthday" required><br>
             <label for="password">密碼：</label>
             <input type="password" id="password" name="password" required><br>
-            
+
             <input type="submit" value="註冊">
         </form>
     </main>
 </body>
+
 </html>

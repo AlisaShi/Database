@@ -1,4 +1,7 @@
 <?php
+include('header.php');
+?>
+<?php
 include 'db.php';
 
 // Get user input
@@ -75,6 +78,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,33 +86,22 @@ $conn->close();
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <style>
-        #map { height: 600px; margin-top: 20px; }
-        #info { margin-top: 20px; padding: 10px; border: 1px solid #ccc; }
+        #map {
+            height: 600px;
+            margin-top: 20px;
+        }
+
+        #info {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>查詢結果</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">首頁</a></li>
-                <li><a href="leaflet.php">步道地圖</a></li>
-                <li><a href="news.php">最新消息</a></li>
-                <li><a href="weather.php">天氣預報</a></li>
-                <li><a href="login.php">會員登入</a></li>
-                
-                <li>
-                <form method="GET" action="results.php">
-                    <label for="search">輸入景點關鍵字:</label>
-                    <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述" value="<?php echo htmlspecialchars($search_term, ENT_QUOTES); ?>">
-                    <input type="submit" value="查詢">
-                </form>
-                <button onclick="window.location.href='index.php'">返回首頁</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <h1>查詢結果</h1>
+    
     <main>
         <form method="GET" action="results.php" id="search-form">
             <input type="hidden" id="search" name="search" value="<?php echo htmlspecialchars($search_term, ENT_QUOTES); ?>">
@@ -119,7 +112,7 @@ $conn->close();
             <div>
                 <label>選擇難度:</label>
                 <div>
-                    <?php for ($i = 1; $i <= 5; $i++): ?>
+                    <?php for ($i = 1; $i <= 5; $i++) : ?>
                         <input type="checkbox" id="difficulty<?php echo $i; ?>" name="difficulty[]" value="<?php echo $i; ?>" <?php echo in_array($i, $selected_difficulties) ? 'checked' : ''; ?>>
                         <label for="difficulty<?php echo $i; ?>"><?php echo $i; ?></label>
                     <?php endfor; ?>
@@ -130,7 +123,7 @@ $conn->close();
                 <div>
                     <?php
                     $tour_options = ['半天', '一天', '一天以上', '少於半天'];
-                    foreach ($tour_options as $option):
+                    foreach ($tour_options as $option) :
                     ?>
                         <input type="checkbox" id="tour<?php echo $option; ?>" name="tour[]" value="<?php echo $option; ?>" <?php echo in_array($option, $selected_tours) ? 'checked' : ''; ?>>
                         <label for="tour<?php echo $option; ?>"><?php echo $option; ?></label>
@@ -140,73 +133,73 @@ $conn->close();
             <button type="submit">篩選</button>
         </form>
 
-        <?php if (count($locations) > 0 || count($trails) > 0): ?>
+        <?php if (count($locations) > 0 || count($trails) > 0) : ?>
             <div id="map"></div>
 
-            <?php if (empty($search_term)): ?>
+            <?php if (empty($search_term)) : ?>
                 <p>請輸入要搜尋的景點或步道名稱</p>
-            <?php else: ?>
-                <?php if ($location_first): ?>
+            <?php else : ?>
+                <?php if ($location_first) : ?>
                     <!-- Output location_info results first -->
-                    <?php if (count($locations) > 0): ?>
+                    <?php if (count($locations) > 0) : ?>
                         <h2>Location Info Results</h2>
                         <ul>
-                            <?php foreach ($locations as $row): ?>
+                            <?php foreach ($locations as $row) : ?>
                                 <li>
                                     <a href='details.php?id=<?php echo $row['id']; ?>'><?php echo $row['location_name']; ?></a><br>
                                     <?php echo $row['address']; ?>
                                 </li><br>
                             <?php endforeach; ?>
                         </ul>
-                    <?php else: ?>
+                    <?php else : ?>
                         <h2>Location Info Results</h2>
                         <p>沒有找到相關景點。</p>
                     <?php endif; ?>
 
                     <!-- Output trail results -->
-                    <?php if (count($trails) > 0): ?>
+                    <?php if (count($trails) > 0) : ?>
                         <h2>Trail Results</h2>
                         <ul>
-                            <?php foreach ($trails as $row): ?>
+                            <?php foreach ($trails as $row) : ?>
                                 <li>
                                     <a href='detailstrail.php?id=<?php echo $row['trailid']; ?>'><?php echo $row['tr_cname']; ?></a><br>
                                     <?php echo "{$row['city']} {$row['district']}<br>長度: {$row['tr_length']}<br>難度: {$row['tr_dif_class']}<br>遊覽時間: {$row['tr_tour']}"; ?>
                                 </li><br>
                             <?php endforeach; ?>
                         </ul>
-                    <?php else: ?>
+                    <?php else : ?>
                         <h2>Trail Results</h2>
                         <p>沒有找到相關步道。</p>
                     <?php endif; ?>
-                <?php else: ?>
+                <?php else : ?>
                     <!-- Output trail results first -->
-                    <?php if (count($trails) > 0): ?>
+                    <?php if (count($trails) > 0) : ?>
                         <h2>Trail Results</h2>
                         <ul>
-                            <?php foreach ($trails as $row): ?>
+                            <?php foreach ($trails as $row) : ?>
                                 <li>
                                     <a href='detailstrail.php?id=<?php echo $row['trailid']; ?>'><?php echo $row['tr_cname']; ?></a><br>
                                     <?php echo "{$row['city']} {$row['district']}<br>長度: {$row['tr_length']}<br>難度: {$row['tr_dif_class']}<br>遊覽時間: {$row['tr_tour']}"; ?>
                                 </li><br>
                             <?php endforeach; ?>
                         </ul>
-                    <?php else: ?>
+                    <?php else : ?>
                         <h2>Trail Results</h2>
                         <p>沒有找到相關步道。</p>
                     <?php endif; ?>
 
                     <!-- Output location_info results -->
-                    <?php if (count($locations) > 0): ?>
+                    <?php if (count($locations) > 0) : ?>
                         <h2>Location Info Results</h2>
                         <ul>
-                            <?php foreach ($locations as $row): ?>
+                            <?php foreach ($locations as $row) : ?>
                                 <li>
                                     <a href='details.php?id=<?php echo $row['id']; ?>'><?php echo $row['location_name']; ?></a><br>
                                     <?php echo $row['address']; ?>
                                 </li><br>
                             <?php endforeach; ?>
                         </ul>
-                    <?php else: ?>
+                    <?php else : ?>
                         <h2>Location Info Results</h2>
                         <p>沒有找到相關景點。</p>
                     <?php endif; ?>
@@ -228,11 +221,36 @@ $conn->close();
 
                 // Define styles for different colors
                 var styles = {
-                    1: { color: 'red', fillColor: 'red', fillOpacity: 0.5, radius: 8 },
-                    2: { color: 'blue', fillColor: 'blue', fillOpacity: 0.5, radius: 8 },
-                    3: { color: 'green', fillColor: 'green', fillOpacity: 0.5, radius: 8 },
-                    4: { color: 'yellow', fillColor: 'yellow', fillOpacity: 0.5, radius: 8 },
-                    5: { color: 'purple', fillColor: 'purple', fillOpacity: 0.5, radius: 8 },
+                    1: {
+                        color: 'red',
+                        fillColor: 'red',
+                        fillOpacity: 0.5,
+                        radius: 8
+                    },
+                    2: {
+                        color: 'blue',
+                        fillColor: 'blue',
+                        fillOpacity: 0.5,
+                        radius: 8
+                    },
+                    3: {
+                        color: 'green',
+                        fillColor: 'green',
+                        fillOpacity: 0.5,
+                        radius: 8
+                    },
+                    4: {
+                        color: 'yellow',
+                        fillColor: 'yellow',
+                        fillOpacity: 0.5,
+                        radius: 8
+                    },
+                    5: {
+                        color: 'purple',
+                        fillColor: 'purple',
+                        fillOpacity: 0.5,
+                        radius: 8
+                    },
                 };
 
                 // Location data
@@ -248,16 +266,16 @@ $conn->close();
                     var popupContent = `<a href="details.php?id=${location.id}" target="_blank">${location.location_name}</a>`;
                     var marker = L.circleMarker([location.latitude, location.longitude], style).addTo(map)
                         .bindPopup(popupContent);
-                    
+
                     var clicked = false; // Track whether the popup was clicked
                     var isHovered = false; // Track whether the marker is hovered
 
                     marker.on('click', function() {
                         clicked = true; // Set clicked to true when the marker is clicked
                     });
-                    
+
                     marker.on('mouseover', function() {
-                        info.innerHTML = 
+                        info.innerHTML =
                             `<b>${location.location_name}</b>
                             <br>${location.address}`;
                         this.openPopup(); // Open popup on mouseover
@@ -267,9 +285,8 @@ $conn->close();
                         isHovered = this;
                     });
 
-                    marker.on('mouseout', function() {
-                    });
-                    
+                    marker.on('mouseout', function() {});
+
                     map.on('click', function() {
                         if (isHovered) {
                             isHovered.closePopup(); // Close the last hovered marker's popup
@@ -285,47 +302,48 @@ $conn->close();
                 var trails = <?php echo json_encode($trails); ?>;
                 trails.forEach(function(trail) {
                     omnivore.kml(trail.tr_kml)
-                    .on('ready', function() {
-                        var layer = this;
+                        .on('ready', function() {
+                            var layer = this;
 
-                        // Adjust the view to fit all lines in the KML file
-                        map.fitBounds(layer.getBounds());
+                            // Adjust the view to fit all lines in the KML file
+                            map.fitBounds(layer.getBounds());
 
-                        // Add mouse events for each layer
-                        layer.eachLayer(function(layer) {
-                            if (layer.feature && layer.feature.properties) {
-                                var name = trail.tr_cname;
-                                var description = layer.feature.properties.description || "";
-                                var popupContent = `<a href="detailstrail.php?id=${trail.trailid}" target="_blank">${trail.tr_cname}</a>`;
-                                layer.bindPopup(popupContent);
+                            // Add mouse events for each layer
+                            layer.eachLayer(function(layer) {
+                                if (layer.feature && layer.feature.properties) {
+                                    var name = trail.tr_cname;
+                                    var description = layer.feature.properties.description || "";
+                                    var popupContent = `<a href="detailstrail.php?id=${trail.trailid}" target="_blank">${trail.tr_cname}</a>`;
+                                    layer.bindPopup(popupContent);
 
-                                // Add mouseover event
-                                layer.on('mouseover', function(e) {
-                                    info.innerHTML =
-                                        `<b>${trail.tr_cname}</b>`;
-                                    this.openPopup();
-                                });
+                                    // Add mouseover event
+                                    layer.on('mouseover', function(e) {
+                                        info.innerHTML =
+                                            `<b>${trail.tr_cname}</b>`;
+                                        this.openPopup();
+                                    });
 
-                                // Add mouseout event to close popup
-                                layer.on('mouseout', function() {
-                                    
-                                });
+                                    // Add mouseout event to close popup
+                                    layer.on('mouseout', function() {
 
-                                layer.on('click', function() {
-                                    if (isHovered) {
-                                        isHovered.closePopup(); // Close popup on map click
-                                    }
-                                    isHovered = false;
-                                });
-                            }
-                        });
-                    })
-                    .addTo(map);
+                                    });
+
+                                    layer.on('click', function() {
+                                        if (isHovered) {
+                                            isHovered.closePopup(); // Close popup on map click
+                                        }
+                                        isHovered = false;
+                                    });
+                                }
+                            });
+                        })
+                        .addTo(map);
                 });
             </script>
-        <?php else: ?>
+        <?php else : ?>
             <p>沒有找到相關景點或步道。</p>
         <?php endif; ?>
     </main>
 </body>
+
 </html>

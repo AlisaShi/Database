@@ -1,5 +1,12 @@
 <?php
+include('header.php');
+?>
+
+<!-- 這是 index.php 的其餘內容 -->
+
+<?php
 include 'db.php'; // 连接数据库的文件
+
 
 // 获取景点数据
 $query = "SELECT Type_ID, id, location_name, ST_X(coordinates) as longitude, ST_Y(coordinates) as latitude, address FROM `location_info`;";
@@ -25,37 +32,10 @@ $conn->close();
         #map {
             height: 600px;
         }
-
-        #info {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
     </style>
 </head>
 
 <body>
-    <header>
-        <h1>首頁</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">首頁</a></li>
-                <li><a href="trails.php">步道地圖</a></li>
-                <li><a href="leaflet.php">林道地圖</a></li>
-                <li><a href="news.php">最新消息</a></li>
-                <li><a href="weather.php">天氣預報</a></li>
-                <li><a href="login.php">會員登入</a></li>
-                <li><a href="note.php">筆記</a></li>
-
-                <li>
-                    <form method="GET" action="results.php">
-                        <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述">
-                        <input type="submit" value="查詢">
-                    </form>
-                </li>
-            </ul>
-        </nav>
-    </header>
     <main>
         <div id="map"></div>
         <div id="info">將游標移到地圖上的標記點以查看詳細資訊</div>

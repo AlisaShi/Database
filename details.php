@@ -1,4 +1,6 @@
+
 <?php
+session_start();
 include 'db.php';
 
 // 獲取URL中的景點ID
@@ -44,7 +46,7 @@ if ($result_weather->num_rows > 0) {
     }
 }
 // Fetch the managing department information
-$tr_id = $location['TR_ID']?? null; // Use null coalescing operator to avoid undefined index error
+$tr_id = $location['TR_ID'] ?? null; // Use null coalescing operator to avoid undefined index error
 $sql_tr = "SELECT TR_Name, TR_Phone FROM tr_admin WHERE TR_ID = '$tr_id'";
 $result_tr = $conn->query($sql_tr);
 
@@ -54,10 +56,14 @@ if ($result_tr->num_rows > 0) {
 } else {
     $managing_department = "未知";
 }
+
+$is_logged_in = isset($_SESSION['User_ID']);
+$message = $_GET['message'] ?? '';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -68,41 +74,42 @@ if ($result_tr->num_rows > 0) {
             width: 100%;
             border-collapse: collapse;
         }
-        th, td {
+
+        th,
+        td {
             border: 1px solid #ddd;
             padding: 8px;
             text-align: center;
         }
+
         th {
             background-color: #f2f2f2;
         }
     </style>
 </head>
-<body>
-<header>
-<h1><?php echo $location['location_name']; ?></h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">首頁</a></li>
-                <li><a href="trails.php">步道地圖</a></li>
-                <li><a href="leaflet.php">林道地圖</a></li>
-                <li><a href="news.php">最新消息</a></li>
-                <li><a href="weather.php">天氣預報</a></li>
-                <li><a href="login.php">會員登入</a></li>
 
-                <li>
-                    <form method="GET" action="results.php">
-                        <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述">
-                        <input type="submit" value="查詢">
-                    </form>
-                    <button onclick="window.location.href='results.php'">返回列表</button>
-                    <button onclick="window.location.href='index.php'">返回首頁</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
+<body>
+<?php
+include('header.php');
+?>
+<header>
+<nav>
+    <h1><?php echo $location['location_name']; ?></h1>
+</nav>
+</header>
     <main>
+    <?php if ($message): ?>
+            <script>
+                alert("<?php echo htmlspecialchars($message); ?>");
+            </script>
+        <?php endif; ?>
+        <?php if ($is_logged_in): ?>
+        <button onclick="window.location.href='favorite.php?action=add&location_id=<?php echo $id; ?>'">收藏</button>
+        <button onclick="window.location.href='notes.php?location_id=<?php echo $id; ?>'">管理筆記與待辦事項</button>
+    <?php else: ?>
+        <p>請<a href="login.php">登入</a>以收藏景點和管理筆記。</p>
+    <?php endif; ?>
+
         <p><strong>地址:</strong> <?php echo $location['address']; ?></p>
         <p><strong>描述:</strong> <?php echo $location['description']; ?></p>
         <p><strong>網址:</strong> <a href="<?php echo $location['page_url']; ?>" target="_blank"><?php echo $location['page_url']; ?></a></p>
@@ -112,8 +119,9 @@ if ($result_tr->num_rows > 0) {
         <p><strong>是否允許小型車進入:</strong> <?php echo $location['small_vehicle_allowed'] ? 'Yes' : 'No'; ?></p>
         <p><strong>是否允許大型車進入:</strong> <?php echo $location['large_vehicle_allowed'] ? 'Yes' : 'No'; ?></p>
 
+        
 
-        <h2>該地區一周天氣預報:  <?php echo $district['District']; ?></h2>
+        <h2>該地區一周天氣預報: <?php echo $district['District']; ?></h2>
         <div> 早上: 06:00:00 ~ 18:00:00</div>
         <div> 晚上: 18:00:00 ~ 06:00:00(跨天)</div>
         <table>
@@ -128,18 +136,18 @@ if ($result_tr->num_rows > 0) {
                 </tr>
             </thead>
             <tbody>
-                <?php if (!empty($forecast_data)): ?>
-                    <?php foreach ($forecast_data as $data): ?>
+                <?php if (!empty($forecast_data)) : ?>
+                    <?php foreach ($forecast_data as $data) : ?>
                         <tr>
                             <td><?php echo date("Y-m-d", strtotime($data['Start_Time'])); ?></td>
                             <td colspan="1">
-                                <?php 
-                                    $end_time = date("H:i:s", strtotime($data['End_Time']));
-                                    if ($end_time == "06:00:00") {
-                                        echo '晚上';
-                                    } elseif ($end_time == "18:00:00") {
-                                        echo '早上';
-                                    }
+                                <?php
+                                $end_time = date("H:i:s", strtotime($data['End_Time']));
+                                if ($end_time == "06:00:00") {
+                                    echo '晚上';
+                                } elseif ($end_time == "18:00:00") {
+                                    echo '早上';
+                                }
                                 ?>
                             </td>
                             <td><?php echo date("l", strtotime($data['Start_Time'])); ?></td>
@@ -148,14 +156,15 @@ if ($result_tr->num_rows > 0) {
                             <td><?php echo $data['MinTemperature']; ?>°C</td>
                         </tr>
                     <?php endforeach; ?>
-                <?php else: ?>
+                <?php else : ?>
                     <tr>
                         <td colspan="5">沒有對應天氣資料</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
         </table>
-        
+
     </main>
 </body>
+
 </html>

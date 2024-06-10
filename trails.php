@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+<?php
+include('header.php');
+?>
+<header>
+  <nav>
+  <h1>步道地圖</h1>
+  </nav>
+</header>
+
   <title>步道地圖</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -49,26 +59,8 @@
     }
   </style>
 </head>
+
 <body>
-<header>
-    <h1>步道地圖</h1>
-    <nav>
-            <ul>
-                <li><a href="index.php">首頁</a></li>
-                <li><a href="trails.php">步道地圖</a></li>
-                <li><a href="leaflet.php">林道地圖</a></li>
-                <li><a href="news.php">最新消息</a></li>
-                <li><a href="weather.php">天氣預報</a></li>
-                <li><a href="login.php">會員登入</a></li>
-                <li>
-                    <form method="GET" action="results.php">
-                        <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述">
-                        <input type="submit" value="查詢">
-                    </form>
-                </li>
-            </ul>
-        </nav>
-</header>
   <div id="map"></div>
   <script>
     // 初始化地图并设置视图为台湾的中心和适当的缩放级别
@@ -107,4 +99,5 @@
       });
   </script>
 </body>
+
 </html>

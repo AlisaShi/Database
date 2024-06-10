@@ -1,3 +1,4 @@
+
 <?php
 include 'db.php';
 
@@ -66,6 +67,7 @@ if ($tr_id) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,31 +84,32 @@ if ($tr_id) {
         }
     </style>
 </head>
-<body>
-<header>
-<h1><?php echo htmlspecialchars($trail['TR_CNAME']); ?></h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">首頁</a></li>
-                <li><a href="trails.php">步道地圖</a></li>
-                <li><a href="leaflet.php">林道地圖</a></li>
-                <li><a href="news.php">最新消息</a></li>
-                <li><a href="weather.php">天氣預報</a></li>
-                <li><a href="login.php">會員登入</a></li>
 
-                <li>
-                    <form method="GET" action="results.php">
-                        <input type="text" id="search" name="search" placeholder="輸入景點名稱或描述">
-                        <input type="submit" value="查詢">
-                    </form>
-                    <button onclick="window.location.href='results.php'">返回列表</button>
-                    <button onclick="window.location.href='index.php'">返回首頁</button>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
+<body>
+<?php
+include('header.php');
+?>
+<header>
+<nav>
+    <ul>
+        <h1><?php echo htmlspecialchars($trail['TR_CNAME']); ?></h1>
+    </ul>
+</nav>
+</header>
+
     <main>
+    <?php if ($message): ?>
+            <script>
+                alert("<?php echo htmlspecialchars($message); ?>");
+            </script>
+        <?php endif; ?>
+    <?php if ($is_logged_in): ?>
+        <button onclick="window.location.href='favorite.php?action=add&location_id=<?php echo $id; ?>'">收藏</button>
+        <button onclick="window.location.href='notes.php?location_id=<?php echo $id; ?>'">管理筆記與待辦事項</button>
+    <?php else: ?>
+        <p>請<a href="login.php">登入</a>以收藏景點和管理筆記。</p>
+    <?php endif; ?>
+
         <p><strong>Trail ID:</strong> <?php echo htmlspecialchars($trail['TRAILID']); ?></p>
         <p><strong>City ID:</strong> <?php echo htmlspecialchars($trail['City_ID']); ?></p>
         <p><strong>District ID:</strong> <?php echo htmlspecialchars($trail['District_ID']); ?></p>
@@ -118,8 +121,8 @@ if ($tr_id) {
         <p><strong>Difficulty Class:</strong> <?php echo htmlspecialchars($trail['TR_DIF_CLASS']); ?></p>
         <p><strong>Tour:</strong> <?php echo htmlspecialchars($trail['TR_TOUR']); ?></p>
         <p><strong>Best Season:</strong> <?php echo htmlspecialchars($trail['TR_BEST_SEASON']); ?></p>
-        
-        <h2>該地區一周天氣預報:  <?php echo htmlspecialchars($district['District']); ?></h2>
+
+        <h2>該地區一周天氣預報: <?php echo htmlspecialchars($district['District']); ?></h2>
         <div> 早上: 06:00:00 ~ 18:00:00</div>
         <div> 晚上: 18:00:00 ~ 06:00:00(跨天)</div>
         <table>
@@ -134,14 +137,14 @@ if ($tr_id) {
                 </tr>
             </thead>
             <tbody>
-                <?php if (!empty($forecast_data)): ?>
-                    <?php foreach ($forecast_data as $data): ?>
+                <?php if (!empty($forecast_data)) : ?>
+                    <?php foreach ($forecast_data as $data) : ?>
                         <tr>
                             <td><?php echo date("Y-m-d", strtotime($data['Start_Time'])); ?></td>
                             <td colspan="1">
-                                <?php 
-                                    $end_time = date("H:i:s", strtotime($data['End_Time']));
-                                    echo ($end_time == "06:00:00") ? '晚上' : (($end_time == "18:00:00") ? '早上' : '');
+                                <?php
+                                $end_time = date("H:i:s", strtotime($data['End_Time']));
+                                echo ($end_time == "06:00:00") ? '晚上' : (($end_time == "18:00:00") ? '早上' : '');
                                 ?>
                             </td>
                             <td><?php echo date("l", strtotime($data['Start_Time'])); ?></td>
@@ -150,14 +153,14 @@ if ($tr_id) {
                             <td><?php echo htmlspecialchars($data['MinTemperature']); ?>°C</td>
                         </tr>
                     <?php endforeach; ?>
-                <?php else: ?>
+                <?php else : ?>
                     <tr>
                         <td colspan="6">沒有對應天氣資料</td>
                     </tr>
                 <?php endif; ?>
             </tbody>
         </table>
-        
+
         <div id="map"></div>
         <script>
             // 初始化地图并设置视图为台湾的中心和适当的缩放级别
@@ -205,4 +208,5 @@ if ($tr_id) {
         <?php $conn->close(); ?>
     </main>
 </body>
+
 </html>
